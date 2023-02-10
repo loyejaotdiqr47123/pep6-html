@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>小学英语</title>
+<meta charset=utf-8>
+<meta name="keywords" content="小学英语">
+<meta name="description" content="小学英语">
+<meta name="author" content="本站由杭州翰臣科技有限公司进行全程策划/页面设计/程序开发完成.24小时技术支持——翰臣科技：http://www.68team.com">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+	<div class="iall uncj">
+		<!-- 背景 -->
+		<img src="images/u1/a/cj/bg.png" alt="英语">
+		<img src="images/u1/a/cj/xs/1.png" alt="英语" class="zidx z5 xsbg">
+
+		<!-- 云 -->
+		<div class="iyun">
+			<img src="images/yun1.png" alt="英语"> 
+			<img src="images/yun2.png" alt="英语"> 
+			<img src="images/yun3.png" alt="英语"> 
+			<img src="images/yun4.png" alt="英语"> 
+		</div>
+
+		<!-- 按钮 -->
+
+		<a href="u2_a_cj_c.html" class="an_cj an_cjc">
+			<img src="images/u1/a/cj/c.png" alt="英语">
+		</a>
+
+		<a href="u2_a_cj_j.html" class="an_cj an_cjj">
+			<img src="images/u1/a/cj/j.png" alt="英语">
+		</a>
+
+
+		<!-- 返回 -->
+
+		<a href="u2_a.html" class="fh alltime">
+			<img src="images/fh_g.png" alt="英语">
+			<img src="images/fhz.png" alt="英语">
+		</a>
+
+
+	</div>
+
+	
+
+
+    
+
+
+	<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+	<script type='text/javascript' src='js/JR.js'></script>
+
+
+	
+	<script type="text/javascript">
+		
+		
+		
+		
+
+		$(function(){
+			
+		// 熊和松鼠
+		function xs () {
+			var fish = 1
+			var fishTotal = 10
+
+			setInterval(function () {
+				fish++
+				if (fish > fishTotal) fish = 10
+				$('.iall .xsbg').attr('src', 'images/u1/a/cj/xs/'  + fish + '.png')
+			}, 120)
+		}
+
+		xs ();
+
+		setTimeout(function () { $('.uncj .an_cj').addClass('act'); }, 1300);
+		
+
+	   
+		
+
+
+		})
+
+
+		
+	</script>
+</body>
+
+</html>

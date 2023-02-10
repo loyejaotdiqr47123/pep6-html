@@ -1,0 +1,163 @@
+@import '../css/index.css';
+.plank {
+    width: 70vw;
+    height: 50vw;
+    background: url('./images/plank.png') center no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+#title {
+    width: 40vw;
+    position: absolute;
+    left: 16vw;
+    top: 6vw;
+}
+
+#title img {
+    width: 100%;
+    position: absolute;
+    top: -2.5vw;
+    left: 0;
+}
+
+
+/* 输入框 */
+
+#input-box {
+    width: 12vw;
+    height: 3vw;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 3vw;
+    position: absolute;
+    top: 8vw;
+    left: 40vw;
+    border: 2px dashed #d0181a;
+}
+
+
+/* 提示框 */
+
+#tip {
+    width: 9vw;
+    position: absolute;
+    right: -10vw;
+    bottom: 5vw;
+}
+
+
+/* 铅笔 */
+
+#pencli {
+    width: 10vw;
+    position: absolute;
+    z-index: 2;
+}
+
+
+/* 灯 */
+
+#light {
+    width: 8vw;
+    position: absolute;
+    left: -5vw;
+    top: 19vw;
+}
+
+.btns {
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 21vw;
+    top: 29.5vw;
+}
+
+.btns img {
+    width: 32%;
+    display: block;
+    cursor: pointer;
+}
+
+
+/* 字母按钮 */
+
+#letters li {
+    width: 10vw;
+    height: 10vw;
+    background-image: url('./images/btn.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+#letters li img {
+    width: 7vw;
+    display: block;
+    margin: 1.5vw auto;
+}
+
+#letters li:nth-child(1) {
+    left: 9vw;
+    top: 16vw;
+}
+
+#letters li:nth-child(2) {
+    left: 20vw;
+    top: 16vw;
+}
+
+#letters li:nth-child(3) {
+    left: 31vw;
+    top: 16vw;
+}
+
+#letters li:nth-child(4) {
+    left: 42vw;
+    top: 16vw;
+}
+
+#letters li:nth-child(5) {
+    left: 53vw;
+    top: 16vw;
+}
+
+#letters li:nth-child(6) {
+    left: 9vw;
+    top: 27vw;
+}
+
+#letters li:nth-child(7) {
+    left: 53vw;
+    top: 27vw;
+}
+
+#letters li:nth-child(8) {
+    left: 9vw;
+    top: 38vw;
+}
+
+#letters li:nth-child(9) {
+    left: 20vw;
+    top: 38vw;
+}
+
+#letters li:nth-child(10) {
+    left: 31vw;
+    top: 38vw;
+}
+
+#letters li:nth-child(11) {
+    left: 42vw;
+    top: 38vw;
+}
+
+#letters li:nth-child(12) {
+    left: 53vw;
+    top: 38vw;
+}

@@ -1,0 +1,47 @@
+body {
+  background: transparent;
+}
+.lyl {
+  padding: 12px 0;
+}
+.lyl .show {
+  position: relative;
+  max-width: 932px;
+  cursor: pointer;
+  margin: auto;
+  width: 70%;
+}
+
+.play_wrap {
+  position: relative;
+}
+.play_wrap ul {
+  position: absolute;
+  right: -2%;
+  width: 22%;
+  bottom: -2%;
+  height: 61%;
+}
+.play_wrap ul li {
+  height: 20%;
+}
+.play_wrap ul li a {
+  font-size: 0;
+  background: url(../images/select.png) center / contain no-repeat;
+  opacity: 0;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  width: 50%;
+  height: 100%;
+  display: block;
+  float: left;
+}
+.play_wrap ul li a:hover {
+  opacity: .5;
+}
+.play_wrap ul li a.active {
+  opacity: 1;
+}

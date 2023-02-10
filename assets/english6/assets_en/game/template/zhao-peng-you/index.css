@@ -1,0 +1,52 @@
+@import '../css/index.css';
+#topic {
+    width: 46vw;
+    position: absolute;
+    top: 14vw;
+    left: 25vw;
+}
+
+#topic img {
+    width: 100%;
+}
+
+#options {
+    width: 48vw;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 18vw;
+    top: 33vw;
+}
+
+#options img {
+    width: 20vw;
+    cursor: pointer;
+}
+
+#score {
+    font-size: 3.6vw;
+    font-weight: 700;
+    text-shadow: 0 0 0.5vw #fff;
+    position: absolute;
+    top: 13vw;
+    left: 62vw;
+    color: red;
+    animation: score 1s linear forwards;
+    display: none;
+}
+
+@keyframes score {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate3d(0, -5vw, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -10vw, 0);
+        opacity: 0;
+    }
+}

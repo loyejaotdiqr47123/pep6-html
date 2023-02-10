@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云海穿梭</title>
+    <link rel="stylesheet" href="../../../../template/yun-hai-chuan-suo/index.css">
+    <style>
+        #topic-img {
+            width: 0vw;
+            top: 25vw;
+            right: 40vw;
+        }
+        
+        #topic-img>img {
+            width: 30vw;
+        }
+        
+        #topic-img>div>div:nth-child(1) img {
+            width: 15vw;
+        }
+        
+        #topic-img>div>div:nth-child(2) img {
+            width: 15vw;
+            margin-left: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <img width="100%" src="../../../../template/yun-hai-chuan-suo/images/bg.png" alt="">
+        <!-- 开始 -->
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/yun-hai-chuan-suo/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+
+                </div>
+            </div>
+        </div>
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">90</span>
+        </div>
+        <!-- 云海 -->
+        <div class="clouds-box">
+            <img class="island" src="../../../../template/yun-hai-chuan-suo/images/island.png" />
+            <ul id="options">
+
+            </ul>
+        </div>
+        <!-- 起点 -->
+        <div class="origin">
+            <img width="100%" src="../../../../template/yun-hai-chuan-suo/images/origin.png" alt="">
+        </div>
+        <!-- 小人 -->
+        <img id="kid" src="../../../../template/yun-hai-chuan-suo/images/kid.png" alt="">
+        <div id="topic-img">
+            <!-- <img id="topic-img" width="100%" src="" alt=""> -->
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 90
+        var data = [{
+            topicImg: "./images/p1.png",
+            sound: './sound/sound1.mp3',
+            option: [{
+                name: "./images/A.  older.png",
+                right: true
+            }, {
+                name: "./images/B.  old.png",
+                right: false
+            }, ]
+        }, {
+            topicImg: "./images/p2.png",
+            sound: './sound/sound2.mp3',
+            option: [{
+                name: "./images/A. young .png",
+                right: false
+            }, {
+                name: "./images/B.  younger.png",
+                right: true
+            }, ]
+        }, {
+            //
+            topicImg: "./images/p3.png",
+            sound: './sound/sound3.mp3',
+            option: [{
+                name: "./images/A.  thin.png",
+                right: false
+            }, {
+                name: "./images/B.  thinner.png",
+                right: true
+            }, ]
+        }, {
+            topicImg: "./images/p4.png",
+            sound: './sound/sound4.mp3',
+            option: [{
+                name: "./images/A.  bigger.png",
+                right: true
+            }, {
+                name: "./images/B.  big.png",
+                right: false
+            }, ]
+        }, {
+            topicImg: "./images/p5.png",
+            sound: './sound/sound5.mp3',
+            option: [{
+                name: "./images/A.  hers.png",
+                right: true
+            }, {
+                name: "./images/B. her.png",
+                right: false
+            }, ]
+        }, {
+            topicImg: "./images/p6.png",
+            sound: './sound/sound6.mp3',
+            option: [{
+                name: "./images/A. heavy .png",
+                right: false
+            }, {
+                name: "./images/B.  heavier.png",
+                right: true
+            }, ]
+        }, {
+            topicImg: "./images/p7.png",
+            sound: './sound/sound7.mp3',
+            option: [{
+                name: "./images/A.  earlier.png",
+                right: true
+            }, {
+                name: "./images/B.  early.png",
+                right: false
+            }, ]
+        }, {
+            topicImg: "./images/p8.png",
+            sound: './sound/sound8.mp3',
+            option: [{
+                name: "./images/A. slow.png",
+                right: false
+            }, {
+                name: "./images/B.  slower.png",
+                right: true
+            }, ]
+        }, {
+            topicImg: "./images/p9.png",
+            sound: './sound/sound9.mp3',
+            option: [{
+                name: "./images/A.  faster.png",
+                right: true
+            }, {
+                name: "./images/B.  fast.png",
+                right: false
+            }, ]
+        }, {
+            topicImg: "./images/p10.png",
+            sound: './sound/sound10.mp3',
+            option: [{
+                name: "./images/A. easier.png",
+                right: false
+            }, {
+                name: "./images/B.  easy.png",
+                right: true
+            }, ]
+        }]
+    </script>
+    <script src="../../../../template/yun-hai-chuan-suo/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+// 生命
+var HP = 3
+    // 总分
+var totalPoints = 0
+    // 每题得分
+var grade = parseInt((100 / data.length).toFixed(0))
+    // 倒计时定时器
+var countDown = null
+
+// 计分板
+var dHP = document.getElementById('HP')
+var dGrade = document.getElementById('grade')
+var dCountDown = document.getElementById('count-down')
+    // 结果计分板
+var overBox = document.getElementById('over-box')
+var overTime = document.getElementById('over-time')
+var overIntegral = document.getElementById('over-integral')
+var panelImg = document.getElementById('panel-img')
+    // 声音
+var audioCorrect = document.getElementById('audio-correct')
+var aduioError = document.getElementById('aduio-error')
+
+var listBox = document.getElementById('list-box')
+var hintBox = document.getElementById('hint-box')
+var lightRed = document.getElementById('light-red') // 红灯
+var lightGreen = document.getElementById('light-green') // 绿灯
+var plank = document.getElementById('plank') // 木板
+var train = document.getElementById('train') // 火车
+
+// 随机排序
+var list = data
+for (var i = 0; i < list.length; i++) {
+    list[i].list.sort(() => { return 0.5 - Math.random() })
+}
+list.sort(() => { return 0.5 - Math.random() })
+
+// 初始化音频
+var audioArr = []
+for (var i = 0; i < list.length; i++) {
+    var sound = new Audio
+    sound.src = list[i].sound
+    audioArr.push(sound)
+}
+
+// 当前题目
+var listIndex = 0
+    // 积分
+var integral = 0
+
+function answer() {
+    var liHtml = ''
+    for (var i = 0; i < list[listIndex].list.length; i++) {
+        liHtml += '<img ondragstart="drawListStart(event)" ondragover="drawListOver(event)" draggable="true" data-order="' + list[listIndex].list[i].order + '" src="' + list[listIndex].list[i].word + '" />'
+            // liHtml += '<li ondragstart="drawListStart(event)" ondragover="drawListOver(event)" draggable="true" data-order="' + list[listIndex].list[i].order + '"><img src="' + list[listIndex].list[i].word + '" /></li>'
+    }
+
+    if (list[listIndex].list.length >= 10) {
+        listBox.style.cssText = 'justify-content: start;'
+    } else {
+        listBox.style.cssText = ''
+    }
+    listBox.innerHTML = liHtml
+    audioArr[listIndex].play()
+}
+
+//获取元素在父元素中的index
+function getIndex(el) {
+    var index = 0;
+    if (!el || !el.parentNode) {
+        return -1;
+    }
+    while (el && (el = el.previousElementSibling)) {
+        index++;
+    }
+    return index;
+}
+// 当前拖动元素
+var draging = null
+
+function drawListStart(e) {
+    draging = e.target
+}
+
+function drawListOver(e) {
+    event.preventDefault()
+    if (e.target.nodeName === "IMG" && e.target !== draging) {
+        if (getIndex(draging) < getIndex(e.target)) {
+            e.target.parentNode.insertBefore(draging, e.target.nextSibling);
+            draging.className = 'word-left'
+        } else {
+            e.target.parentNode.insertBefore(draging, e.target);
+            draging.className = 'word-right'
+        }
+    }
+}
+
+// ok
+var allow = false
+
+function ok() {
+    if (allow === false) {
+        return false
+    } else {
+        allow = false
+    }
+    var flag = true
+    for (var i = 0; i < listBox.children.length; i++) {
+        if (listBox.children[i].getAttribute('data-order') != (i + 1) && listBox.children[i].getAttribute('data-order') != 'null') {
+            flag = false
+        }
+    }
+    if (flag === true) {
+        // alert('正确')
+        lightGreen.className = 'green-blink'
+        plank.className = 'plank-down'
+        train.className = 'train-move'
+        audioCorrect.currentTime = 0
+        audioCorrect.play()
+        totalPoints += grade
+        dGrade.innerHTML = totalPoints
+        setTimeout(() => {
+            lightGreen.className = ''
+            plank.className = ''
+            train.className = ''
+            if (listIndex < (list.length - 1)) {
+                listIndex += 1
+                integral += 1
+                answer()
+            } else {
+                // alert('完成')
+                clearInterval(countDown)
+                overBox.style.display = 'block'
+                overTime.innerText = '时间：' + totalTime
+                HP == 3 ? totalPoints = 100 : totalPoints = totalPoints.toFixed(0)
+                overIntegral.innerText = '得分：' + totalPoints
+            }
+            allow = true
+        }, 3000);
+    } else {
+        // alert('错误')
+        lightRed.className = 'red-blink'
+        setTimeout(() => {
+            lightRed.className = ''
+            allow = true
+        }, 1000);
+        aduioError.currentTime = 0
+        aduioError.play()
+        HP -= 1
+        dHP.innerText = HP
+        dGrade.innerHTML = totalPoints
+        if (HP <= 0) {
+            // alert('游戏结束')
+            panelImg.src = '../../../../template/images/scoring-error.png'
+            overBox.style = 'display: block'
+            overTime.innerText = '时间：' + totalTime
+            overIntegral.innerText = '得分：' + totalPoints.toFixed(0)
+            clearInterval(countDown)
+        }
+    }
+}
+// 显示提示
+function showHint() {
+    audioArr[listIndex].play()
+    hintBox.innerText = list[listIndex].hint
+        // hintBox.style.cssText = 'display: block'
+    setTimeout(() => {
+        // hintBox.style.cssText = ''
+    }, 2000);
+}
+// function showHint() {
+//     if (list[listIndex].chImg) {
+//         hintBox.innerHTML = '<img src="' + list[listIndex].chImg + '" />'
+//     } else {
+//         hintBox.innerText = list[listIndex].hint
+//     }
+//     hintBox.style.cssText = 'display: block'
+//     setTimeout(() => {
+//         hintBox.style.cssText = ''
+//     }, 2000);
+// }
+// 开始
+function start() {
+    var readyGo = document.createElement('audio')
+    readyGo.src = '../../../../template/sound/ready go.mp3'
+    readyGo.play()
+
+    rule.style.cssText = 'display: none'
+    setTimeout(() => {
+        answer()
+        allow = true
+    }, 1500);
+    // 倒计时
+    countDown = setInterval(function() {
+        if (totalTime <= 0) {
+            clearInterval(countDown)
+            panelImg.src = '../../../../template/images/scoring-error.png'
+            overBox.style.cssText = 'display: block'
+            overTime.innerText = '时间：' + totalTime
+            overIntegral.innerText = '得分：' + totalPoints.toFixed(0)
+        } else {
+            totalTime -= 1
+            dCountDown.innerText = totalTime
+        }
+    }, 1000)
+}

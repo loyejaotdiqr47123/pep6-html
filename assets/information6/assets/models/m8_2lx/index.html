@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>试一试</title>
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl">
+    <div class="show" >
+      <div class="common_tit" style="margin-top: -11%;">请把下面的流程图补充完整，使送货机器人能够完成任务后自动返回。</div>
+     <div style="display: flex;flex-direction: row;text-align: center;">
+        <div class="bottom" style="width: 700px;height: 358px;"> 
+            <div ondrop="drop(event)" ondragover="allowDrop(event)" id="box1"></div>
+            <div ondrop="drop1(event)" ondragover="allowDrop1(event)" id="box2"></div>
+            <div ondrop="drop2(event)" ondragover="allowDrop2(event)" id="box3"></div>
+            <div ondrop="drop3(event)" ondragover="allowDrop3(event)" id="box4"></div>   
+        </div>
+        <div class="top" style="flex: 1;line-height: 96px;"> 
+            <img id="drag"  src="images/1.png"  draggable="true" ondragstart="drag(event)" />
+            <img id="drag1"  draggable="true" ondragstart="drag1(event)" src="images/2.png"  />
+            <img id="drag2" draggable="true" ondragstart="drag2(event)" src="images/3.png"  />
+            <img id="drag3"  draggable="true" ondragstart="drag3(event)" src="images/4.png"  />
+          
+        </div>
+       
+      
+      </div>
+    </div>
+    <div class="tools game_btn_group flex">
+      <div class="saveImageBtn game_btn cz"></div>
+      <div class="saveImageBtn game_btn tj"></div>
+    </div>
+    <!--<div class="tools game_btn_group flex" style="width: 100%;">
+      <div class="game_btn fh"></div>
+    </div>-->
+  </div>
+  <div class="err_model flex" style="display: none;">
+    <img src="../../pics/err_ani.gif" alt="">
+    <audio src="../../audio/err.mp3"></audio>
+  </div>
+  <div class="right_model flex" style="display: none;">
+    <img src="../../pics/right_ani.gif" alt="">
+    <audio src="../../audio/right.mp3"></audio>
+  </div>
+</div>
+<audio src="audio/title.mp3" id="title"></audio>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+  // $('#title').trigger('play')
+  var count = 0
+  var totalNum = 4
+
+    $(window).on("mouseup",function(){
+      console.log("Fgd")
+    })
+    $('.lyl .cz').on("click",function(){
+        window.location.reload();
+    })
+    $('.lyl .tj').on("click",function(){
+       if(count == 4){
+       
+        $('.right_model').fadeIn()
+        $('.right_model audio').trigger('play')
+        setTimeout(()=>{
+          $('.right_model').fadeOut()
+        },1000)
+       }else{
+        $('.err_model audio').trigger('play')
+          $('.err_model').fadeIn()
+          $('.err_model audio').trigger('play')
+          setTimeout(()=>{
+            $('.err_model').fadeOut()
+          },1000)
+       }
+    })
+
+
+function allowDrop(ev){
+ 
+	ev.preventDefault();
+}
+
+function drag(ev){
+ 	ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev){
+
+	ev.preventDefault();
+	var data=ev.dataTransfer.getData("Text");
+	ev.target.appendChild(document.getElementById(data));
+  if( document.getElementById(data).id == "drag"){
+     count++
+   }
+  
+}
+function allowDrop1(ev){
+	ev.preventDefault();
+}
+
+function drag1(ev){
+  
+	ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop1(ev){
+	ev.preventDefault();
+	var data=ev.dataTransfer.getData("Text");
+	ev.target.appendChild(document.getElementById(data));
+
+  if( document.getElementById(data).id == "drag1"){
+     count++
+   }
+}
+function allowDrop2(ev){
+	ev.preventDefault();
+}
+
+function drag2(ev){
+  
+	ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop2(ev){
+	ev.preventDefault();
+	var data=ev.dataTransfer.getData("Text");
+	ev.target.appendChild(document.getElementById(data));
+  if( document.getElementById(data).id == "drag2" || document.getElementById(data).id == "drag3"){
+     count++
+   }
+}
+function allowDrop3(ev){
+	ev.preventDefault();
+}
+
+function drag3(ev){
+ 
+	ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop3(ev){
+  
+	ev.preventDefault();
+	var data=ev.dataTransfer.getData("Text");
+	ev.target.appendChild(document.getElementById(data));
+  if( document.getElementById(data).id == "drag3" || document.getElementById(data).id == "drag2"){
+     count++
+   }
+}
+
+</script>
+</html>
+

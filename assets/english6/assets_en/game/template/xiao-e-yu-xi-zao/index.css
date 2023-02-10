@@ -1,0 +1,167 @@
+@import '../css/index.css';
+#hint-box {
+    width: 40vw;
+    /* height: 4.5vw; */
+    color: #fff;
+    line-height: 4.5vw;
+    text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    position: absolute;
+    top: 30vw;
+    left: 30vw;
+    /* border-radius: 10px; */
+    display: none;
+}
+
+#hint-box img {
+    height: 100%;
+}
+
+#list-box {
+    width: 99%;
+    max-width: 100%;
+    /* height: 7vw; */
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 10vw;
+    /* right: 15vw; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#list-box img {
+    /* height: 100%; */
+    height: 6vw;
+    display: block;
+}
+
+.btns {
+    width: 24vw;
+    position: absolute;
+    left: 8vw;
+    top: 33.5vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns div {
+    width: 9vw;
+    height: 12.6vw;
+    cursor: pointer;
+}
+
+.btns div:first-child {
+    background: url('./images/ok.png') center no-repeat;
+    background-size: contain;
+}
+
+.btns div:last-child {
+    background: url('./images/show.png') center no-repeat;
+    background-size: contain;
+}
+
+.word-left {
+    animation: wordLeft 0.3s forwards;
+}
+
+@keyframes wordLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -2vw, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.word-right {
+    animation: wordRight 0.3s forwards;
+}
+
+@keyframes wordRight {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -2vw, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.water {
+    width: 5vw;
+    position: absolute;
+    right: 14vw;
+    top: 27vw;
+    animation: waterDown 1.5s forwards;
+    display: none;
+}
+
+@keyframes waterDown {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-4vw, 8vw);
+        opacity: 0;
+    }
+}
+
+
+/* 鳄鱼 */
+
+.crocodile-box {
+    width: 34vw;
+    position: absolute;
+    left: 42vw;
+    top: 26vw;
+}
+
+.crocodile {
+    width: 80%;
+    position: absolute;
+    top: -2vw;
+}
+
+.hand {
+    width: 7vw;
+    position: absolute;
+    right: -11vw;
+    top: 11vw;
+}
+
+.hand-move {
+    animation: handMove 1s infinite;
+    transform-origin: 100% 40%;
+}
+
+@keyframes handMove {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.foam {
+    width: 100%;
+    position: absolute;
+    top: 3.4vw;
+}
+
+.bathtub {
+    width: 100%;
+    position: absolute;
+    top: 10vw;
+    left: 0;
+}

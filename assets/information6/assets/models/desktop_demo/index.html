@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../desktop/css/popupwindow.css">
+  <link rel="stylesheet" href="../desktop/css/style.css">
+  <title>桌面</title>
+</head>
+<body>
+<div class="desktop_ico flex f-dc f-as">
+  <div class="computer" title="显示连接到此计算机的驱动器和硬件。" draggable="true">
+    <img src="../desktop/images/computer.png" alt="">
+    <img src="../desktop/images/computer_menu.png" alt="" class="menu">
+  </div>
+  <div draggable="true" title="访问网络上的计算机和设备。">
+    <img src="../desktop/images/network.png" alt="">
+    <img src="../desktop/images/menu.png" alt="" class="menu">
+  </div>
+  <div class="ie" title="查找并显示 Internet 上的信息和网站。" draggable="true">
+    <img src="../desktop/images/ie.png" alt="">
+    <img src="../desktop/images/menu.png" alt="" class="menu">
+  </div>
+  <div draggable="true">
+    <img src="../desktop/images/files.png" alt="">
+    <img src="../desktop/images/menu.png" alt="" class="menu">
+  </div>
+  <div class="trash" title="包含你已经删除的文件和文件夹。" draggable="true">
+    <img src="../desktop/images/trash.png" alt="">
+    <img src="../desktop/images/trash_menu.png" alt="" class="menu">
+  </div>
+</div>
+
+<div class="windows_bottom flex f-jsb">
+  <div class="l flex">
+    <div class="windows_ico">
+      <img src="../desktop/images/windows_bottom_ico.png" alt="">
+    </div>
+    <img src="../desktop/images/windows_bottom_left.png" alt="">
+  </div>
+  <div class="r">
+    <img src="../desktop/images/windows_bottom_right.png" alt="">
+  </div>
+</div>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script src="../desktop/js/popupwindow.js"></script>
+<script src="js/index.js"></script>
+
+<script>
+  $(function () {
+    $(document).on('contextmenu', function () {
+      return false
+    })
+    $('#ie').PopupWindow({
+      title: '',
+      modal: false,
+      autoOpen: false,
+      height: 300,
+      width: 375,
+      minHeight: 300,
+      minWidth: 300,
+      dragOpacity: 1,
+      resizeOpacity: 1,
+      // resizable: false,
+      buttons: {
+        collapse: false
+      },
+      top: 450,
+      left: 800,
+    })
+    $('.ie').on('dblclick', function () {
+      $('#ie').PopupWindow('open')
+    })
+    $('#ie').on('unmaximize.popupwindow', function (e, obj) {
+      var width = 0
+      if (obj) {
+        width = obj.width
+      } else {
+        width = $(this).width()
+      }
+      if (width > 768) {
+        $(this).parents('.popupwindow').addClass('big')
+      } else {
+        $(this).parents('.popupwindow').removeClass('big')
+      }
+    })
+  })
+</script>
+</html>

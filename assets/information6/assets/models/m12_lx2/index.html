@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>连线demo</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl flex f-dc">
+    <div class="show">
+      <div class="common_tit">
+           如果要把页面设置成A3大小，你觉得应该怎么设置？
+          <!-- <input type="text" maxlength="1" readonly> -->
+        </div>
+      <div class="xx_o flex">
+        <ul class="xx">
+          <li class="flex f-js"><span class="flex">A</span>页边距</li>
+          <li class="flex f-js"><span class="flex">B</span>页面方向</li>
+          <li class="flex f-js"><span class="flex">C</span>页面大小</li>
+        </ul>
+      </div>
+      <div class="tools game_btn_group flex">
+        <div class="saveImageBtn game_btn cz"></div>
+        <div class="saveImageBtn game_btn tj"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="err_model flex" style="display: none;">
+  <img src="../../pics/err_ani.gif" alt="">
+  <audio src="../../audio/err.mp3"></audio>
+</div>
+<div class="right_model flex" style="display: none;">
+  <img src="../../pics/right_ani.gif" alt="">
+  <audio src="../../audio/right.mp3"></audio>
+</div>
+</body>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript"> 
+  $(function () {
+    $('.xx').on('click', 'li', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+    $('.show .cz').on('click',function(){
+      $('.show .xx li').removeClass('active')
+    })
+    $('.show .tj').on('click', function () {
+    
+      var index = $('.show .xx li.active').index()
+       if(index == 2){  
+            $('.right_model').fadeIn()
+            $('.right_model audio').trigger('play') 
+          }else{
+            $('.err_model').fadeIn()
+            $('.err_model audio').trigger('play')
+          }
+    })
+
+    $('.err_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+    $('.right_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+  })
+</script>
+</html>

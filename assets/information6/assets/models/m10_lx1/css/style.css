@@ -1,0 +1,66 @@
+body {
+  background: transparent;
+}
+.lyl {
+}
+.lyl .show {
+  position: relative;
+  width: 80%;
+  cursor: pointer;
+}
+.lyl .show img {
+  display: block;
+  margin: 0 auto;
+}
+.lyl .show .common_tit {
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+.lyl .show .common_tit input {
+  background: transparent;
+  border: 0;
+  text-align: center;
+  width: 70px;
+  border-bottom: 1px solid #fff;
+  margin: 0 10px;
+}
+.lyl .show .xx {
+  font-family: Alibaba-PuHuiTi;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 50px;
+  letter-spacing: -0.7px;
+  color: #ffffff;
+  text-shadow: 2.5px 1.7px 0px #1b7afa;
+  margin-top: 40px;
+}
+.lyl .show .xx li {
+  margin: 20px 70px;
+  float: left;
+  
+}
+.lyl .show .xx li span {
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  font-family: Arial;
+  font-weight: bold;
+  text-shadow: none;
+  font-size: 32px;
+  border-radius: 50%;
+  color: #3082fc;
+  margin-right: 5px;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.lyl .show .xx li.active span {
+  background-color: #3082fc;
+  box-shadow: 0px 0px 19.2px 4.8px rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+.lyl .game_btn_group {
+  margin-top: 20px;
+}

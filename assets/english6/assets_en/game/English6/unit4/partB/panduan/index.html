@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <title>canvas连线</title>
+  <link rel="stylesheet" href="../../../../template/qu-wei-bing-gan/index.css">
+  <link rel="stylesheet" type="text/css" href="index.css" > 
+</head>
+
+<body>
+  <div id="rule">
+    <button class="start-btn" onclick="start()"></button>
+    <img src="images/rule.png" alt="">
+  </div>
+
+  <div class="hezi">
+    <img class="bg" src="images/bg.png" alt="">
+    <ul class="ul1">
+      <li class="y d" data-mp3="audio/y.mp3"> </li>
+      <li class="n " data-mp3="audio/n.mp3"> </li>
+      <li class="y d" data-mp3="audio/y.mp3"> </li>
+      <li class="n " data-mp3="audio/n.mp3"> </li>
+      <li class="y " data-mp3="audio/n.mp3"> </li>
+      <li class="n d" data-mp3="audio/y.mp3"> </li>
+      <li class="y " data-mp3="audio/n.mp3"> </li>
+      <li class="n d" data-mp3="audio/y.mp3"> </li>
+    </ul>
+  </div>
+
+  
+
+
+  <audio id="sound" src=""></audio>
+
+  <script type='text/javascript' src='../../../../../js/jquery-1.11.3.min.js'></script>
+
+  <script>
+
+    // 开始
+    var rule = document.getElementById('rule') ;
+
+    function start () {
+      var readyGo = document.createElement('audio');
+      readyGo.src = '../../../../template/sound/ready go.mp3';
+      readyGo.play();
+      rule.style.cssText = 'display: none';
+    }
+
+
+
+    // 填空判断
+
+    $('.hezi .ul1 li').on('click',function(){
+      $(this).addClass('act');
+      var src=$(this).attr('data-mp3');
+      $("#sound").stop(true,false).attr({src: src}).trigger('play');
+    });
+
+
+
+    $(".hezi .ul1 li:nth-child(1)").on("input propertychange", "input", function(){
+				var _this=$(this);
+				if(_this.val()== "peas"){
+					$("#sound").stop(true,false).attr({src: 'audio/y.mp3'}).trigger('play');
+				}
+		})
+
+
+    
+
+
+
+
+  </script>
+</body>
+
+</html>

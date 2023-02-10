@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>小学英语</title>
+<meta charset=utf-8>
+<meta name="keywords" content="小学英语">
+<meta name="description" content="小学英语">
+<meta name="author" content="本站由杭州翰臣科技有限公司进行全程策划/页面设计/程序开发完成.24小时技术支持——翰臣科技：http://www.68team.com">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+
+
+	<div class="iall un1 un2">
+		<!-- 背景 -->
+		<img src="images/u1/bg1.png" alt="英语" > 
+		<img src="images/u1/bg2.png" alt="英语" class="zidx z3"> 
+		<!-- 云 -->
+		<div class="iyun">
+			<img src="images/yun1.png" alt="英语"> 
+			<img src="images/yun2.png" alt="英语"> 
+			<img src="images/yun3.png" alt="英语"> 
+			<img src="images/yun4.png" alt="英语"> 
+		</div>
+
+		<!-- 松鼠	 -->
+		<div class="songshu2">
+			<img src="images/u1/ss.png" alt="英语"> 
+			<img src="images/u1/xx/1.png" alt="英语"> 
+			<img src="images/u1/xx/2.png" alt="英语"> 
+			<img src="images/u1/xx/3.png" alt="英语"> 
+			<img src="images/u1/xx/4.png" alt="英语"> 
+		</div>
+		<!-- 熊	 -->
+		<div class="xiong2">
+			<img src="images/u1/xiong.png" alt="英语"> 
+			<img src="images/u1/xx/5.png" alt="英语"> 
+			<img src="images/u1/xx/6.png" alt="英语"> 
+			<img src="images/u1/xx/7.png" alt="英语"> 
+			<img src="images/u1/xx/8.png" alt="英语"> 
+		</div>
+
+
+		<!-- 内容 -->
+		<div class="ubox">
+			<div class="box">
+				<div class="video">
+					<!-- 顶部按钮 -->
+					<div class="abtn clearfix alltime">
+						<span class="yinpin" data-src='audio/u2/1.mp3' ><img src="images/y1.png" alt="英语"> <div class="txt">播放对话</div></span>
+						<span class="donghua" ><img src="images/y2.png" alt="英语"><div class="txt">播放动画</div></span>
+						<span class="zimu" ><img src="images/y3.png" alt="英语"><div class="txt">显示/隐藏字幕</div></span>
+					</div>
+					<!-- 背景图片 -->
+					<img src="images/u2/dh/bg.png" alt="英语">
+
+					<!-- 对话框 -->
+					<ul class="udh udh1 alltime2">
+						<li class="adbf" data-src='audio/u2/dh/1.mp3'>
+							<img src="images/u2/dh/1_1.png" alt="英语">
+							<img src="images/u2/dh/1.png" alt="英语">
+						</li>
+						<li class="adbf" data-src='audio/u2/dh/2.mp3'>
+							<img src="images/u2/dh/2_1.png" alt="英语">
+							<img src="images/u2/dh/2.png" alt="英语">
+						</li>
+						<li class="adbf" data-src='audio/u2/dh/3.mp3'>
+							<img src="images/u2/dh/3_1.png" alt="英语">
+							<img src="images/u2/dh/3.png" alt="英语">
+						</li>
+						<li class="adbf" data-src='audio/u2/dh/4.mp3'>
+							<img src="images/u2/dh/4_1.png" alt="英语">
+							<img src="images/u2/dh/4.png" alt="英语">
+						</li>
+				
+					</ul> 
+
+					<!-- 视频 -->
+
+					<video preload="none" class="vd" src="video/u2/1.mp4"  ></video>
+
+
+				</div>
+
+
+			</div>
+			<!-- 底部按钮 -->
+			<div class="abtm clearfix alltime">
+				<img src="images/u1/bg3.png" alt="英语">
+				<div class="abox">
+					<a href="u2_a.html"> <img src="images/u1/pa_1.png" alt="英语"> </a>
+					<a href="u2_b.html"> <img src="images/u1/pa_2.png" alt="英语"> </a>
+					<a href="u2_c.html"> <img src="images/u1/pa_3.png" alt="英语"> </a>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 返回 -->
+
+		<a href="../index.html" class="fh alltime">
+			<img src="images/fh_g.png" alt="英语">
+			<img src="images/fhz.png" alt="英语">
+		</a>
+	</div>
+
+	<audio src="audio/bgm/2.mp3" autoplay class="hidead" ></audio>
+
+
+
+
+
+
+	<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+	<script type='text/javascript' src='js/JR.js'></script>
+
+	<script type="text/javascript">
+
+
+
+		// 返回
+
+
+
+		// 入场
+
+		setTimeout(function () { $('.un1 .songshu2').addClass('act'); }, 500);
+		setTimeout(function () { $('.un1 .songshu2').addClass('act2'); }, 800);
+		
+		setTimeout(function () { $('.un1 .xiong2').addClass('act'); }, 1500);
+		setTimeout(function () { $('.un1 .xiong2').addClass('act2'); }, 1800);
+
+
+		$(function(){
+				
+
+
+			// 课文对话
+			$(".adbf").on('click',function(){
+				$(this).stop(true,false).addClass('act ').siblings().stop(true,false).removeClass('act').addClass('jin');
+				$('.un1 .ubox .box .video .abtn').stop(true,false).addClass('jin');
+				var src=$(this).attr('data-src');
+				$(".hidead").stop(true,false).attr({src:src}).trigger('play');
+				$(".hidead").on('ended',function(){
+					$(".adbf").stop(true,false).removeClass('act jin');
+					$('.un1 .ubox .box .video .abtn').stop(true,false).removeClass('jin');
+				})
+			});
+
+			// 顶部按钮/音频
+			$(".yinpin").on('click',function(){
+				// $('.un1 .ubox .box .video .abtn').stop(true,false).addClass('jin');
+				$(".adbf").stop(true,false).addClass('jin');
+				var src=$(this).attr('data-src');
+				$(".hidead").stop(true,false).attr({src:src}).trigger('play');
+				$(".hidead").on('ended',function(){
+					$('.un1 .ubox .box .video .abtn').stop(true,false).removeClass('jin');
+					$(".adbf").stop(true,false).removeClass('jin');
+
+				})
+			});
+
+			// 顶部按钮/音频
+
+			$(".donghua").on('click',function(){
+				$('.un1 .ubox .box .video .abtn').stop(true,false).addClass('jin');
+				$(".adbf").stop(true,false).addClass('jin');
+				$('.un1 .ubox .box .video  video.vd').stop(true,false).addClass('act').trigger('play');
+                $(".hidead").stop(true,false).trigger('pause');
+				
+				$('.un1 .ubox .box .video  video.vd').on('ended',function(){
+					$('.un1 .ubox .box .video  video.vd').stop(true,false).removeClass('act');
+					$('.un1 .ubox .box .video .abtn').stop(true,false).removeClass('jin');
+					$(".adbf").stop(true,false).removeClass('jin');
+
+				})
+			});
+
+			// 顶部按钮/字幕
+
+			$(".zimu").on('click',function(){
+
+				// $(this).siblings().stop(true,false).toggleClass('jin');
+
+				$('.un1 .ubox .box .video .udh').stop(true,false).toggle().toggleClass('jin');
+
+				
+
+			});
+
+
+
+
+
+
+		});
+
+	</script>
+</body>
+
+</html>

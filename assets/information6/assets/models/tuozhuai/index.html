@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Let`s check</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="content">
+    
+    <img width="100%" src="images/bg.png" alt="">
+    <div class="common_tit">设计一个能围绕长方形建筑物巡逻的机器人，请编写正确的流程图。</div>
+    <ul id="check-list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <div id="number-list">
+      <div class="list-item1" data-flag="1"></div>
+      <div class="list-item2" data-flag="1"></div>
+      <div class="list-item3" data-flag="1"></div>
+      <div class="list-item4" data-flag="1"></div>
+    </div>
+
+   <div class="dn">
+     <img src="images/5.png" alt="">
+   </div>
+
+   <div class="add_btn"></div>
+  </div>
+  <script src="./index.js"></script>
+  <script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+  <script>
+
+    $('.add_btn').on('click',function(){
+      $('.dn').fadeIn();
+    });
+
+
+  </script>
+</body>
+</html>

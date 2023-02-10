@@ -1,0 +1,29 @@
+@import '../css/index.css';
+
+/* 连连看列表盒子 */
+
+#list-box {
+    width: 81%;
+    /* min-width: 540px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 17%;
+    transform: translateX(-50%);
+}
+
+#list-box li {
+    width: 12vw;
+    height: 13vw;
+    margin: 0.1vw;
+    cursor: pointer;
+}
+
+#list-box li img {
+    width: 100%;
+    display: block;
+    transition: all 0.5s;
+}

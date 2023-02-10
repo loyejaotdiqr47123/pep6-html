@@ -1,0 +1,226 @@
+  body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+  }
+
+
+
+  img{display: block;width: 100%;pointer-events: none;}
+
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    color: #eee;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .instructions {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    padding: 5px 15px;
+    color: #eee;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    color: #eee;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  canvas {
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  #dot1 {
+    position: absolute;
+    width: 55%;
+    left: 1%;
+    top: 2.2vw;
+    padding-top:13.5%;
+   background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+  #dot2 {
+    position: absolute;
+    width: 55%;
+    left: 1%;
+    top: 16vw;
+    padding-top:13.5%;
+   background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+  #dot3 {
+    position: absolute;
+    width: 55%;
+    left: 1%;
+    top: 29.7vw;
+    padding-top:13%;
+   background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+  
+
+  #dot4 {
+    position: absolute;
+    width: 55%;
+    left: 1%;
+    top: 43vw;
+    padding-top:13.5%;
+   background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+
+
+
+  #dot5 {
+    position: absolute;
+    width: 13%;
+    left: 82%;
+    top: 1vw;
+    padding-top: 13%;
+    background:url(images/tu1.png) center no-repeat;
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+  #dot6 {
+    position: absolute;
+    width: 13%;
+    left: 82%;
+    top: 15vw;
+    padding-top: 13%;
+    background:url(images/tu2.png) center no-repeat;
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+  #dot7 {
+    position: absolute;
+    width: 13%;
+    left: 82%;
+    top: 28.5vw;
+    padding-top: 13%;
+    background:url(images/tu3.png) center no-repeat;
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+  
+
+  #dot8 {
+    position: absolute;
+    width: 13%;
+    left: 82%;
+    top: 43vw;
+    padding-top: 13%;
+    background:url(images/tu4.png) center no-repeat;
+    z-index: 3;
+    cursor: pointer;
+    background-size: cover;
+  }
+
+
+
+
+
+
+ 
+
+  #img1 {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    color: #708090;
+  }
+
+  #img2 {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+
+  #img3 {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+  #img4 {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+
+  #img5 {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+
+  #submit {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    z-index: 4;
+  }
+  #retry {
+    position: absolute;
+    bottom: 10%;
+    left: 55%;
+    z-index: 4;
+  }
+
+  #canvas {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    /* left: 20vw;
+    top: 20vw; */
+  }

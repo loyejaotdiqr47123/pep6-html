@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>小学英语</title>
+<meta charset=utf-8>
+<meta name="keywords" content="小学英语">
+<meta name="description" content="小学英语">
+<meta name="author" content="本站由杭州翰臣科技有限公司进行全程策划/页面设计/程序开发完成.24小时技术支持——翰臣科技：http://www.68team.com">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/swiper.css">
+</head>
+<body >
+	<div class="iall uag1 un1">
+		<!-- 背景 -->
+		<img src="images/u1/a/game/bg.png" alt="英语">
+		<img src="images/u1/a/game/bg2.png" alt="英语" class="zidx z3 ">
+		
+
+
+		<!-- 云 -->
+		<div class="iyun">
+			<img src="images/yun1.png" alt="英语"> 
+			<img src="images/yun2.png" alt="英语"> 
+			<img src="images/yun3.png" alt="英语"> 
+			<img src="images/yun4.png" alt="英语"> 
+		</div>
+
+		<div class="xiong5 ">
+			<img src="images/u1/a/game/x1.png" alt="英语"> 
+			<img src="images/u1/a/game/x2.png" alt="英语"> 
+		</div>
+
+		<div class="songshu5 ">
+			<img src="images/u1/a/game/s1.png" alt="英语"> 
+			<img src="images/u1/a/game/s2.png" alt="英语"> 
+		</div>
+
+
+		<!-- 游戏主体 -->
+		
+		<div class="uagcen">
+			<img src="images/u1/a/game/kbg.png" alt="英语">
+			<div class="ifm">
+				<iframe src="game/English6/recycle1/part/bingo/index.html" frameborder="0"></iframe>
+			</div>
+		</div>
+
+		<!-- 分类按钮 -->
+		<ul class="ubtm clearfix alltime">
+			<li data-src='game/English6/recycle1/part/bingo/index.html' class="act">
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/btna22.png"  alt="英语">
+			</li>
+			<li data-src='game/English6/recycle1/part/tiankong/index.html'>
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/qwyd.png"  alt="英语">
+			</li>
+			<li data-src='game/English6/recycle1/part/xuanze/index.html'>
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/qwyd.png"  alt="英语">
+			</li>
+			<li data-src='game/English6/recycle1/part/xiao-e-yv-xi-zao/index.html'>
+				<img src="images/game/bg3.png"  alt="英语">
+				<img src="images/game/bga3.png"  alt="英语">
+				<img src="images/game/btna9.png"  alt="英语">
+			</li>
+			
+		</ul>
+	
+		
+		<!-- 返回 -->
+
+
+		<a href="r1.html" class="fh alltime">
+			<img src="images/fh_g.png" alt="英语">
+			<img src="images/fhz.png" alt="英语">
+		</a>
+
+
+		<!-- 音乐 音频 -->
+
+		<audio src="" class="hidead" controls></audio>
+
+
+		
+
+	</div>
+
+	
+
+
+
+
+
+
+	<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+	<script type='text/javascript' src='js/swiper.min.js'></script>
+	<script type='text/javascript' src='js/JR.js'></script>
+	<script type='text/javascript' src='js/snowfall.jquery.js'></script>
+
+	<script type="text/javascript">
+
+
+		// 下雪
+		$(document).snowfall({deviceorientation : true, round : true, minSize: 3, maxSize:8});
+
+		$(function(){
+
+			$('.uag1 .xiong5').addClass('act');
+			$('.uag1 .songshu5').addClass('act');
+			
+			$('.uag1 .ubtm li').on('click',function(){
+				$(this).stop(true,false).addClass('act ').siblings().stop(true,false).removeClass('act');
+				var src=$(this).attr('data-src');
+				$(".uag1 .uagcen .ifm iframe").stop(true,false).attr({src:src});
+			});
+
+
+
+
+
+
+
+
+
+		})
+	</script>
+</body>
+
+</html>

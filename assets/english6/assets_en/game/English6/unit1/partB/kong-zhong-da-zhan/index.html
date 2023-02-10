@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空中大战</title>
+    <link rel="stylesheet" href="../../../../template/kong-zhong-da-zhan/index.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <!-- 滚动背景 -->
+        <div class="roll-bg"></div>
+
+        <!-- 背景 -->
+        <img class="bg" width="100%" src="../../../../template/kong-zhong-da-zhan/images/bg.png" alt="">
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/kong-zhong-da-zhan/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+                </div>
+            </div>
+        </div>
+
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">70</span>
+        </div>
+        <div id="topic">
+        </div>
+        <div class="xiaoniao"><img src="../../../../template/kong-zhong-da-zhan/images/xiaoniao.png" alt=""></div>
+        <div class="option-box">
+            <!-- 飞机 -->
+            <div id="aircraft" class="aircraft-box">
+                <img width="100%" src="../../../../template/kong-zhong-da-zhan/images/aircraft.png" alt="">
+                <img id="bullet" src="../../../../template/kong-zhong-da-zhan/images/bullet.png" alt="">
+                <img id="aircraft-explode" src="../../../../template/kong-zhong-da-zhan/images/explode.png" alt="">
+
+            </div>
+            <ul id="list-box">
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 70
+        var data = [{
+            topic: "./images/I’m ___ than you..png", // 题目
+            options: [ // 选项
+                {
+                    title: "./images/thinner.png",
+                    right: true // 是否正确
+                }, {
+                    title: "./images/thin.png",
+                    right: false
+                }, {
+                    title: "./images/strong.png",
+                    right: false
+                }
+            ]
+        }, {
+            topic: "./images/My hands are bigger than __..png",
+            options: [{
+                title: "./images/yours.png",
+                right: true
+            }, {
+                title: "./images/your.png",
+                right: false
+            }, {
+                title: "./images/you.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/I’m 5 __ taller than you ..png",
+            options: [{
+                title: "./images/cm.png",
+                right: true
+            }, {
+                title: "./images/year.png",
+                right: false
+            }, {
+                title: "./images/years.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/A pencil is 15 __..png",
+            options: [{
+                title: "./images/cm.png",
+                right: true
+            }, {
+                title: "./images/m.png",
+                right: false
+            }, {
+                title: "./images/mm.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/I am 158 cm tall, but you are 155 cm tall. So____..png",
+            options: [{
+                title: "./images/I am taller than you..png",
+                right: true
+            }, {
+                title: "./images/I am shorter than you..png",
+                right: false
+            }, {
+                title: "./images/You are 3 cm taller  than me..png",
+                right: false
+            }]
+        }, {
+            topic: "./images/You’re taller than __ brother..png",
+            options: [{
+                title: "./images/your.png",
+                right: true
+            }, {
+                title: "./images/you.png",
+                right: false
+            }, {
+                title: "./images/me.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/The boy is 45 kg.The girl is 40 kg. Which one is right1.png",
+            options: [{
+                title: "./images/The boy is heavier than  the girl..png",
+                right: true
+            }, {
+                title: "./images/The girl is stronger than  the boy..png",
+                right: false
+            }, {
+                title: "./images/The boy is bigger than  the girl..png",
+                right: false
+            }]
+        }, {
+            topic: "./images/Tom is 160 cm tall.His brother is 7  cm taller than Tom.How tal.png",
+            options: [{
+                title: "./images/167 cm..png",
+                right: true
+            }, {
+                title: "./images/153 cm..png",
+                right: false
+            }, {
+                title: "./images/155 cm..png",
+                right: false
+            }]
+        }, {
+            topic: "./images/You’re taller than __..png",
+            options: [{
+                title: "./images/me.png",
+                right: true
+            }, {
+                title: "./images/I.png",
+                right: false
+            }, {
+                title: "./images/you.png",
+                right: false
+            }]
+        }]
+    </script>
+    <script src="../../../../template/kong-zhong-da-zhan/index.js"></script>
+    <script src="../../../../../js/jquery-1.11.3.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+body {
+  background: transparent;
+}
+.lyl {
+  background: url(../images/background.png) center / contain no-repeat;
+  padding: 40px 0 40px;
+  width: 1260px;
+  /*margin: auto;*/
+}
+.lyl .show {
+  position: relative;
+  max-width: 885px;
+  cursor: pointer;
+  margin: auto;
+  width: 80%;
+}
+.lyl .show .top {
+  height:58px;
+}
+.select_equ1 {
+  margin-top: 30px;
+  line-height: 68px;
+}
+.select_equ2 {
+   display: none;
+  margin-top: 30px;
+  line-height: 68px;
+}
+.select_equ3 {
+   display: none;
+  margin-top: 30px;
+  line-height: 68px;
+}
+.right{
+  display: none;
+  position:absolute ;
+  right: 0;
+  top: 0;
+}
+.common_tit{
+  margin-bottom: 50px;
+}
+.err{
+  display: none;
+  position:absolute ;
+  right: 0;
+  top: 0;
+}
+.lyl .show .xx {
+  font-family: Alibaba-PuHuiTi;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 50px;
+  letter-spacing: -0.7px;
+  color: #ffffff;
+  text-shadow: 2.5px 1.7px 0px #1b7afa;
+  /* margin-top: 40px; */
+}
+.lyl .show .xx li {
+  margin: 20px 0;
+}
+.lyl .show .xx li span {
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  font-family: Arial;
+  font-weight: bold;
+  text-shadow: none;
+  font-size: 32px;
+  border-radius: 50%;
+  color: #3082fc;
+  margin-right: 22px;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.lyl .show .xx li.active span {
+  background-color: #3082fc;
+  box-shadow: 0px 0px 19.2px 4.8px rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+.lyl .game_btn_group {
+  margin-top: 68px;
+}
+.info1{
+  display: none;
+}
+.info2{
+  display: block;
+}

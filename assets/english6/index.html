@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <title>小学英语</title>
+    <meta charset=utf-8>
+    <meta name="keywords" content="小学英语">
+    <meta name="description" content="小学英语">
+    <meta name="author" content="本站由杭州翰臣科技有限公司进行全程策划/页面设计/程序开发完成.24小时技术支持——翰臣科技：http://www.68team.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="assets_en/css/style.css">
+</head>
+
+<body>
+    <div class="iall">
+        <!-- 背景 -->
+        <img src="assets_en/images/ibg.png" alt="英语">
+        <img src="assets_en/images/ibg2.png" alt="英语" class="zidx z8">
+        <!-- 云 -->
+        <div class="iyun">
+            <img src="assets_en/images/yun1.png" alt="英语">
+            <img src="assets_en/images/yun2.png" alt="英语">
+            <img src="assets_en/images/yun3.png" alt="英语">
+            <img src="assets_en/images/yun4.png" alt="英语">
+        </div>
+        <!-- 松鼠 -->
+        <div class="songshu alltime2">
+            <img src="assets_en/images/iss.png" alt="英语">
+            <div class="ixx">
+                <img src="assets_en/images/ixx.png" alt="英语">
+                <img src="assets_en/images/ixx1.png" alt="英语">
+                <img src="assets_en/images/ixx2.png" alt="英语">
+            </div>
+        </div>
+        <!-- 单元 -->
+
+        <div class="danyuan clearfix ">
+            <a href="assets_en/u1.html">
+                <img src="assets_en/images/qiu1.png" alt="英语">
+                <img src="assets_en/images/wz1.png" alt="英语">
+                <img src="assets_en/images/xiong/1.png" alt="英语">
+            </a>
+            <a href="assets_en/u2.html">
+                <img src="assets_en/images/qiu2.png" alt="英语">
+                <img src="assets_en/images/wz2.png" alt="英语">
+            </a>
+            <a href="assets_en/u3.html">
+                <img src="assets_en/images/qiu3.png" alt="英语">
+                <img src="assets_en/images/wz3.png" alt="英语">
+            </a>
+            <a href="assets_en/u4.html">
+                <img src="assets_en/images/qiu4.png" alt="英语">
+                <img src="assets_en/images/wz4.png" alt="英语">
+            </a>
+            <a href="assets_en/r1.html">
+                <img src="assets_en/images/qiu5.png" alt="英语">
+                <img src="assets_en/images/wz5.png" alt="英语">
+            </a>
+            <a href="assets_en/r2.html">
+                <img src="assets_en/images/qiu6.png" alt="英语">
+                <img src="assets_en/images/wz6.png" alt="英语">
+            </a>
+        </div>
+
+        <!-- 字幕 -->
+        <div class="bz0 bz1" data-src='assets_en/images/jstc1.png'>
+            <img src="assets_en/images/q1.png" alt="英语">
+        </div>
+        <div class="bz0 bz2" data-src='assets_en/images/jstc2.png'>
+            <img src="assets_en/images/q2.png" alt="英语">
+        </div>
+
+        <!-- 返回 -->
+
+        <a href="../../start.html" class="fh alltime">
+            <img src="assets_en/images/fh_g.png" alt="英语">
+            <img src="assets_en/images/fhz.png" alt="英语">
+        </a>
+
+        <div class="bgyy alltime"></div>
+
+        <!-- 音乐 音频 -->
+        <audio src="assets_en/audio/yly.mp3" class="hidead" autoplay loop></audio>
+
+        <div class="jieshao">
+            <div class="jox">
+                <div class="out alltime"><img src="assets_en/images/out.png" alt="英语"></div>
+                <div class="img">
+                    <img src="assets_en/images/jstc1.png" alt="英语">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type='text/javascript' src='assets_en/js/jquery-1.11.3.min.js'></script>
+    <script type='text/javascript' src='assets_en/js/JR.js'></script>
+    <script src='assets_en/js/snowfall.jquery.js'></script>
+
+    <script type="text/javascript">
+        $(function() {
+
+            // 下雪
+            $(document).snowfall({
+                deviceorientation: true,
+                round: true,
+                minSize: 3,
+                maxSize: 15
+            });
+
+
+            function xiong1() {
+                var fish = 1
+                var fishTotal = 12
+
+                setInterval(function() {
+                    fish++
+                    if (fish > fishTotal) fish = 12
+                    $('.iall .danyuan a img:nth-child(3)').attr('src', 'assets_en/images/xiong/' + 12 + '.png')
+                }, 100)
+            }
+
+            xiong1();
+
+
+
+            $(".iall .danyuan").addClass('act');
+            setTimeout(function() {
+                $('.iall .songshu').addClass('act');
+            }, 300);
+
+            // 背景音乐
+            $('.iall .bgyy').on('click', function() {
+                $(this).stop(true, false).toggleClass('act');
+                if ($(this).hasClass('act')) {
+                    $(".hidead").stop(true, false).trigger('pause');
+                } else {
+                    $(".hidead").stop(true, false).trigger('play');
+                }
+
+            });
+
+
+
+            // 著作与使用说明
+
+            $(".iall  .bz0").on('click', function() {
+                var src = $(this).attr('data-src');
+                $(".iall .jieshao").stop(true, false).fadeIn().find('.img img').attr({
+                    src: src
+                });
+            });
+
+            $(".iall .jieshao .jox .out").on('click', function() {
+                $(".iall .jieshao").stop(true, false).fadeOut();
+            });
+
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

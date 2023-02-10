@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #box1{
+      position: absolute;
+      width: 17%;
+      height: 10%;
+      top: 37%;
+      left: 23%;
+      /* border: 1px solid #000; */
+    }
+  </style>
+  <title>试一试</title>
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl">
+    <div class="show">
+       <div class="common_tit" style="margin-top: -10%;">请把下面的流程图补充完整，使送货机器人能够完成任务后自动返回。</div>
+        <div style="display: flex;flex-direction: row;">
+          <div class="top">
+            <img src="images/1_1.png" alt="" style="width: 74%;" />
+            <a href="javascript:;" id="box1"></a>
+            <a href="javascript:;" id="box2"></a>
+            <a href="javascript:;" id="box3"></a>
+            <a href="javascript:;" id="box4"></a>  
+          </div>
+          <div class="bottom">
+            <div class="drop" data-target="#box2">
+               <img src="images/1.png" alt="" />
+            </div>
+            <div class="drop" data-target="#box4">
+               <img src="images/2.png" alt="" />
+            </div>
+            <div class="drop" data-target="#box1">
+              <img src="images/3.png" alt="" /> 
+            </div>
+            <div class="drop" data-target="#box3">
+               <img src="images/4.png" alt="" />
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--<div class="tools game_btn_group flex" style="width: 100%;">
+      <div class="game_btn fh"></div>
+    </div>-->
+  </div>
+  <div class="err_model flex" style="display: none;">
+    <img src="../../pics/err_ani.gif" alt="">
+    <audio src="../../audio/err.mp3"></audio>
+  </div>
+  <div class="right_model flex" style="display: none;">
+    <img src="../../pics/right_ani.gif" alt="">
+    <audio src="../../audio/right.mp3"></audio>
+    <audio src="audio/right.mp3"></audio>
+<!--    <div class="common_next"></div>-->
+  </div>
+</div>
+<audio src="audio/title.mp3" id="title"></audio>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+  // $('#title').trigger('play')
+  var count = 0
+  var totalNum = 4
+  $('.drop').on('mousedown', function (e) {
+    console.log("Gfdgd")
+    var _this = $(this)
+    var _target = $(_this.data('target'))
+    var _left = _this.css('left')
+    var _top = _this.css('top')
+
+    var boxOffetLeft = $('.lyl .show').offset().left
+    var boxOffetTop = $('.lyl .show').offset().top
+
+    var offsetLeft = _this.offset().left - e.clientX - boxOffetLeft
+    var offsetTop = _this.offset().top - e.clientY - boxOffetTop
+
+    var isDown = true
+    _this.css('cursor', 'move')
+    var centerX = 0
+    var centerY = 0
+    _this.parents('body').find('.tip').fadeOut()
+    _this.find('.err').fadeOut()
+
+    $(window).on('mousemove', function (e) {
+      if (isDown == false) {
+        return
+      }
+      var left = offsetLeft + e.clientX
+      var top = offsetTop + e.clientY
+
+      _this.css({
+        left: left,
+        top: top
+      })
+
+      centerX = left + _this.width() / 2
+      centerY = top + _this.height() / 2
+    })
+    $(window).on('mouseup', function (e) {
+      $(window).off('mousemove mouseup')
+      isDown = false
+      _this.css('cursor', 'default')
+      if (centerX > _target.offset().left - boxOffetLeft
+        && centerX < _target.offset().left - boxOffetLeft + _target.width()
+        && centerY > _target.offset().top - boxOffetTop
+        && centerY < _target.offset().top - boxOffetTop + _target.height()
+      ) {
+        // right
+        _this.stop().animate({
+          left: _target.offset().left - boxOffetLeft + _target.width() / 2 - _this.width() / 2,
+          top: _target.offset().top - boxOffetTop + _target.height() / 2 - _this.height() / 2
+        }, 100)
+        _this.css('pointer-events', 'none')
+
+        _this.find('.right').fadeIn()
+        count++
+        if (count == totalNum) {
+          $('.right_model').fadeIn()
+          $('.right_model audio').eq(1).trigger('play')
+        } else {
+          $('.right_model audio').eq(0).trigger('play')
+        }
+      } else {
+        // err
+        _this.stop().animate({
+          left: _left,
+          top: _top
+        }, 400)
+        _this.find('.err').fadeIn()
+        $('.err_model audio').attr('src', 'audio/err'+Math.round(Math.random() + 1)+'.mp3')
+        $('.err_model audio').trigger('play')
+      }
+    })
+  })
+</script>
+</html>
+

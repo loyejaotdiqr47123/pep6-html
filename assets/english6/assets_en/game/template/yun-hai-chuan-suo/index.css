@@ -1,0 +1,237 @@
+@import '../css/index.css';
+.topic {
+    width: 35vw;
+    position: absolute;
+    top: 0;
+    right: 6vw;
+    z-index: 1;
+}
+
+#topic-img {
+    width: 30vw;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    right: 10vw;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+#topic-img div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
+
+
+/* 起点 */
+
+.origin {
+    width: 18vw;
+    position: absolute;
+    left: 16vw;
+    bottom: 6vw;
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+#options {
+    width: 40vw;
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 14vw;
+    left: 7vw;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+#options li {
+    margin: 0 15px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    /* margin-bottom: 10vw; */
+}
+
+#options li div {
+    width: 20vw;
+    height: 13vw;
+    font-size: 2.8vw;
+    text-align: center;
+    line-height: 8vw;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    animation: brickShow 1s forwards;
+}
+
+#options li div img {
+    width: 5vw;
+}
+
+
+/* 台阶出现动画 */
+
+@keyframes brickShow {
+    0% {
+        transform: translate3d(0, -2vw, 0);
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        height: 13vw;
+        opacity: 1;
+    }
+}
+
+
+/* 小孩 */
+
+#kid {
+    width: 10vw;
+    position: absolute;
+    left: 20.5vw;
+    top: 26vw;
+    z-index: 3;
+    transition: all 1s;
+}
+
+
+/* 左跳 */
+
+.left-jump {
+    animation: leftJump 0.9s linear forwards;
+}
+
+@keyframes leftJump {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    30% {
+        transform: translate3d(0, -5vw, 0) scale(1.1);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+
+/* ie 取消动画 */
+
+@-ms-keyframes leftJump {}
+
+
+/* 右跳 */
+
+.right-jump {
+    animation: rightJump 1s linear forwards;
+}
+
+@keyframes rightJump {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    30% {
+        transform: translate3d(0, -5vw, 0) scale(1.1);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+
+/* ie 取消动画 */
+
+@-ms-keyframes rightJump {}
+
+
+/* 错误小孩消失 */
+
+.kid-vanish {
+    animation: kidVanish 1s forwards;
+}
+
+@keyframes kidVanish {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    30% {
+        transform: translate3d(0, -5vw, 0) scale(1.1);
+    }
+    100% {
+        transform: translate3d(0, 15vw, 0) scale(0);
+    }
+}
+
+
+/* 错误台阶消失 */
+
+.vanish {
+    animation: vanish 1s forwards;
+}
+
+@keyframes vanish {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* 云海背景 */
+
+.clouds-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 1;
+    transform: translateX(-50%);
+    background-image: url('./images/clouds.png');
+    background-size: cover;
+    background-position: 0 100%;
+    /* animation: c 10s forwards; */
+    overflow: hidden;
+    transition: all 1s;
+}
+
+
+/* @keyframes c {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+} */
+
+
+/* 终点 */
+
+.island {
+    width: 88vw;
+    position: absolute;
+    left: -11vw;
+    top: -2vw;
+    display: none;
+    animation: islandShow 1s forwards;
+}
+
+@keyframes islandShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* 舞台 */

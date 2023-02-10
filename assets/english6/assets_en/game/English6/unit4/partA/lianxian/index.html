@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <title>canvas连线</title>
+  <link rel="stylesheet" href="../../../../template/qu-wei-bing-gan/index.css">
+  <link rel="stylesheet" type="text/css" href="index.css" > 
+</head>
+
+<body>
+  <div id="rule">
+    <button class="start-btn" onclick="start()"></button>
+    <img src="images/rule.png" alt="">
+  </div>
+  <img class="bg" src="images/bg.png" alt="">
+
+  <div id="dot1" data-right="0"></div>
+  <div id="dot2" data-right="1"></div>
+  <div id="dot3" data-right="2"></div>
+  <div id="dot4" data-right="3"></div>
+
+  <div id="dot5" data-right="3"></div>
+  <div id="dot6" data-right="2"></div>
+  <div id="dot7" data-right="1"></div>
+  <div id="dot8" data-right="0"></div>
+  
+  <img src="" class="line-img" id="img1" alt="">
+  <img src="" class="line-img" id="img2" alt="">
+  <img src="" class="line-img" id="img3" alt="">
+  <img src="" class="line-img" id="img4" alt="">
+
+  <canvas id='canvas'></canvas>
+
+  <audio id="sound" src=""></audio>
+
+  <script type="text/javascript" src="index.js"></script>
+  <script>
+    // 开始
+    var rule = document.getElementById('rule') ;
+    function start () {
+      var readyGo = document.createElement('audio');
+      readyGo.src = '../../../../template/sound/ready go.mp3';
+      readyGo.play();
+      rule.style.cssText = 'display: none';
+    }
+  </script>
+</body>
+
+</html>

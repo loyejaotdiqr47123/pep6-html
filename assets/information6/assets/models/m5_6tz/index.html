@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>选一选</title>
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl flex f-dc">
+    <div class="show">
+  
+          <div class="common_tit"  >问题1. 两位同学刷卡时，甲同学正常，乙同学刷不出来。那可能的原因是：</div>
+          <div class="xx_o flex anw">
+            <ul class="xx">
+              <li class="flex f-js"><span class="flex">A</span>网络故障 </li>
+              <li class="flex f-js"><span class="flex">B</span>乙同学卡片故障 </li>
+              <li class="flex f-js"><span class="flex">C</span>刷卡器故障  </li>
+            </ul>
+          </div>
+          <div class="xx_o flex anw1">
+            <ul class="xx">
+              <li class="flex f-js"><span class="flex">A</span>卡片都坏了 </li>
+              <li class="flex f-js"><span class="flex">B</span>网络故障 </li>
+              <li class="flex f-js"><span class="flex">C</span>刷卡器故障 </li>
+            </ul>
+          </div>
+          <div class="xx_o flex anw2">
+            <ul class="xx">
+              <li class="flex f-js"><span class="flex">A</span>刷卡器坏了 </li>
+              <li class="flex f-js"><span class="flex">B</span>数据表的对应关系有错 </li>
+              <li class="flex f-js"><span class="flex">C</span>网络问题 </li>
+            </ul>
+          </div>
+
+          <div class="tools game_btn_group flex">
+            <div class="saveImageBtn game_btn cz"></div>
+            <div class="saveImageBtn game_btn tj"></div>
+          </div>
+      </div>
+   
+  </div>
+  <div class="err_model flex" style="display: none;">
+    <img src="../../pics/err_ani.gif" alt="" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);"/>
+    <audio src="../../audio/err.mp3"></audio>
+  </div>
+  <div class="right_model flex" style="display: none;">
+    <img src="../../pics/right_ani.gif" alt="" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);"/>
+    <audio src="audio/right.mp3"></audio> -->
+  </div>
+</div>
+<audio id="audio" src="" ></audio>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+  var num = 1
+    $('.anw1').addClass("info1")
+    $('.anw2').addClass("info1")
+    $('.xx').on('click', 'li', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+    $('.show .cz').on('click',function(){
+      console.log("fdsfs")
+        num = 1
+        $('.xx li').removeClass('active')
+        $('.common_tit').html("问题1.两位同学刷卡时，甲同学正常，乙同学刷不出来。")
+        $('.anw').removeClass('info1')
+        $('.anw1').addClass("info1")
+        $('.anw2').addClass("info1")
+    })
+    $('.show .tj').on('click', function () {
+      if(num == 3){
+        var index2 = $('.show .anw2 li.active').index()
+            if (index2 == 1) {
+              $('.right_model').fadeIn()
+              $('.right_model audio').trigger('play')
+              num = 3;
+            }else{
+              $('.err_model').fadeIn()
+              $('.err_model audio').trigger('play')
+            }
+        } 
+
+      if(num == 2){
+        var index1 = $('.show .anw1 li.active').index()
+            if (index1 == 1) {
+              $('.right_model').fadeIn()
+              $('.right_model audio').trigger('play')
+              num++;
+              $('.common_tit').html("问题3. 甲同学刷卡，但系统显示乙同学签到成功，如果卡片没有拿错，那可能的原因是：")
+              $('.anw1').addClass("info1")
+              $(".anw2").removeClass("info1")
+            }else{
+              $('.err_model').fadeIn()
+              $('.err_model audio').trigger('play')
+            }
+        } 
+
+        if(num == 1 ){
+          var index = $('.show .xx li.active').index()
+            if (index == 1) {
+              $('.right_model').fadeIn()
+              $('.right_model audio').trigger('play')
+              num++;
+              $('.common_tit').html("问题2. 昨天刷卡正常，今天所有卡都刷不出来，更换刷卡器后也不行，可能是：")
+              $('.anw').addClass("info1")
+              $(".anw1").removeClass("info1")
+            }else{
+              $('.err_model').fadeIn()
+              $('.err_model audio').trigger('play')
+            }
+        } 
+   })
+    $('.err_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+    $('.right_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+
+
+</script>
+</html>
+

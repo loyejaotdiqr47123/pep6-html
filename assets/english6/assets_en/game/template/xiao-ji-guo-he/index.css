@@ -1,0 +1,300 @@
+@import '../css/index.css';
+
+/* 云 */
+
+.cloud {
+    position: absolute;
+    z-index: 2;
+}
+
+.cloud1 {
+    width: 10vw;
+    left: -10vw;
+    top: 3vw;
+    animation: c1 14s linear infinite;
+}
+
+@keyframes c1 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(111vw, 0, 0);
+    }
+}
+
+.cloud2 {
+    width: 11vw;
+    left: -11vw;
+    top: 1vw;
+    animation: c2 18s 5s linear infinite;
+}
+
+@keyframes c2 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(100vw, 0, 0);
+    }
+}
+
+#topic {
+    width: 38vw;
+    height: 20vw;
+    color: maroon;
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    top: 8vw;
+    left: 30vw;
+    /* transform: rotateZ(-15deg); */
+    box-sizing: border-box;
+    /* padding-top: 3vw; */
+}
+
+#topic img {
+    width: 20vw;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.option-box {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#list-box {
+    width: 66vw;
+    height: 5vw;
+    position: absolute;
+    left: 16vw;
+    bottom: 13vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#list-box li {
+    width: 10vw;
+    height: 60px;
+    text-align: center;
+    color: #fff;
+    /* background-color: gray; */
+    cursor: pointer;
+}
+
+#list-box li:nth-child(1) {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+}
+
+#list-box li:nth-child(2) {
+    position: absolute;
+    top: 2vw;
+    left: 29vw;
+}
+
+#list-box li:nth-child(3) {
+    position: absolute;
+    top: 2vw;
+    left: 55vw;
+}
+
+#list-box li img {
+    width: 100%;
+    position: absolute;
+    left: 60%;
+    top: 1vw;
+    transform: translateX(-50%);
+    /* height: 3vw; */
+}
+
+#colour-bar {
+    width: 20vw;
+    position: absolute;
+    left: 83vw;
+    bottom: 22.5vw;
+    display: none;
+}
+
+
+/* 舞台 */
+
+
+/* .stage {
+    position: absolute;
+    left: 50%;
+    bottom: 2vw;
+    transform: translateX(-50%);
+    width: 97%;
+    z-index: 6;
+    
+} */
+
+
+/* 小鸡 */
+
+#chook {
+    height: 10vw;
+    /* height: 80px; */
+    /* position: absolute; */
+    /* left: 10vw;
+  bottom: 21.5vw; */
+}
+
+#chook-box {
+    height: 10vw;
+    /* height: 80px; */
+    position: absolute;
+    left: 1vw;
+    bottom: 20vw;
+    z-index: 2;
+}
+
+
+/* 小鸡跳跃 */
+
+.chook-box-jump {
+    animation: move 3.5s linear forwards;
+}
+
+@keyframes move {
+    0% {
+        /*起跳点*/
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        /*降落点*/
+        transform: translate3d(90vw, 0, 0);
+    }
+}
+
+.chook-box-jump-err {
+    animation: move2 3s linear forwards;
+}
+
+@keyframes move2 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(35vw, 0, 0);
+    }
+    100% {
+        transform: translate3d(35vw, 0, 0);
+    }
+}
+
+.correct {
+    animation: jump 3.5s linear forwards;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    12% {
+        transform: translate3d(1vw, -7vw, 0);
+    }
+    25% {
+        transform: translate3d(0, 0vw, 0);
+    }
+    37% {
+        transform: translate3d(0, -7vw, 0);
+    }
+    50% {
+        transform: translate3d(0, 1.5vw, 0);
+    }
+    62% {
+        transform: translate3d(0, -7vw, 0);
+    }
+    75% {
+        transform: translate3d(0, -2vw, 0);
+    }
+    87% {
+        transform: translate3d(0, -7vw, 0);
+    }
+    100% {
+        transform: translate3d(0, 0vw, 0);
+    }
+}
+
+@keyframes chookCorrect2 {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    3% {
+        transform: translate3d(4vw, -1vw, 0);
+    }
+    /* 一跳 */
+    10% {
+        transform: translate3d(15vw, -4vw, 0);
+    }
+    16% {
+        transform: translate3d(17vw, 3vw, 0) scale(1.1, 0.9);
+    }
+    /* 二跳 */
+    26% {
+        transform: translate3d(33vw, -8vw, 0);
+    }
+    34% {
+        transform: translate3d(35vw, 1vw, 0) scale(1.1, 0.9);
+    }
+    /* 三跳 */
+    38% {
+        transform: translate3d(48vw, -5vw, 0);
+    }
+    41% {
+        transform: translate3d(56vw, -7vw, 0);
+    }
+    49% {
+        transform: translate3d(58vw, 2vw, 0) scale(1.1, 0.9);
+    }
+    /* 四跳 */
+    60% {
+        transform: translate3d(74vw, -3vw, 0);
+    }
+    68% {
+        transform: translate3d(76vw, 1vw, 0) scale(1.1, 0.9);
+    }
+    100% {
+        transform: translate3d(76vw, 1vw, 0);
+    }
+}
+
+.error {
+    animation: chookError 3s linear forwards;
+}
+
+
+/*答案错误动作*/
+
+@keyframes chookError {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    12% {
+        transform: translate3d(0, -7vw, 0);
+    }
+    25% {
+        transform: translate3d(0, 0vw, 0);
+    }
+    37% {
+        transform: translate3d(0, -5vw, 0);
+    }
+    50% {
+        transform: translate3d(0, 0vw, 0);
+    }
+    55% {
+        transform: translate3d(0, -2vw, 0);
+    }
+    100% {
+        transform: translate3d(0, 19vw, 0);
+    }
+}

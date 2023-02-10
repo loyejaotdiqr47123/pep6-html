@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鳄鱼洗澡</title>
+    <link rel="stylesheet" href="../../../../template/gao-neng-lie-che/index.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <!-- 滚动背景 -->
+        <div class="roll-bg"></div>
+        <!-- 背景 -->
+        <img class="bg" width="100%" src="../../../../template/gao-neng-lie-che/images/bg.png" alt="">
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/gao-neng-lie-che/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+                </div>
+            </div>
+        </div>
+
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">140</span>
+        </div>
+
+        <!-- 红绿灯 -->
+        <div class="signal">
+            <img id="light-red" src="../../../../template/gao-neng-lie-che/images/red.png" alt="">
+            <img id="light-green" src="../../../../template/gao-neng-lie-che/images/green.png" alt="">
+        </div>
+        <!-- 火车 -->
+        <img id="train" src="../../../../template/gao-neng-lie-che/images/train.png" alt="">
+        <!-- 木板 -->
+        <img id="plank" src="../../../../template/gao-neng-lie-che/images/plank.png" alt="">
+        <img id="z-index" src="../../../../template/gao-neng-lie-che/images/z-index.png" alt="">
+
+        <div id="hint-box"></div>
+        <ul id="list-box"></ul>
+        <div class="btns">
+
+            <div onclick="ok()"></div>
+            <div onclick="showHint()"></div>
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 140
+        var data = [{
+            sound: './sound/s1.mp3',
+            list: [{
+                word: './images/What.png',
+                order: 1
+            }, {
+                word: './images/did1.png',
+                order: 2
+            }, {
+                word: './images/you.png',
+                order: 3
+            }, {
+                word: './images/do.png',
+                order: 4
+            }, {
+                word: './images/last.png',
+                order: 5
+            }, {
+                word: './images/weekend.png',
+                order: 6
+            }, {
+                word: './images/1.png',
+                order: 7
+            }]
+        }, {
+            sound: './sound/s2.mp3',
+            list: [{
+                word: './images/I.png',
+                order: 1
+            }, {
+                word: './images/cleaned.png',
+                order: 2
+            }, {
+                word: './images/my.png',
+                order: 3
+            }, {
+                word: './images/room.png',
+                order: 4
+            }, {
+                word: './images/and.png',
+                order: 5
+            }, {
+                word: "./images/washed.png",
+                order: 6
+            }, {
+                word: './images/clothes.png',
+                order: 7
+            }, {
+                word: './images/on.png',
+                order: 8
+            }, {
+                word: './images/Saturday.png',
+                order: 9
+            }, {
+                word: './images/jh.png',
+                order: 10
+            }]
+        }, {
+            sound: './sound/s3.mp3',
+            list: [{
+                word: './images/Did.png',
+                order: 1
+            }, {
+                word: './images/you.png',
+                order: 2
+            }, {
+                word: './images/play.png',
+                order: 3
+            }, {
+                word: './images/football.png',
+                order: 4
+            }, {
+                word: './images/with.png',
+                order: 5
+            }, {
+                word: './images/ZhangPeng.png',
+                order: 6
+            }, {
+                word: './images/1.png',
+                order: 7
+            }]
+        }, {
+            sound: './sound/s4.mp3',
+            list: [{
+                word: './images/How.png',
+                order: 1
+            }, {
+                word: './images/was.png',
+                order: 2
+            }, {
+                word: './images/your.png',
+                order: 3
+            }, {
+                word: './images/weekend.png',
+                order: 4
+            }, {
+                word: './images/1.png',
+                order: 5
+            }]
+        }, {
+            sound: './sound/s5.mp3',
+            list: [{
+                word: './images/I.png',
+                order: 1
+            }, {
+                word: './images/watched.png',
+                order: 2
+            }, {
+                word: './images/some.png',
+                order: 3
+            }, {
+                word: "./images/children's.png",
+                order: 4
+            }, {
+                word: './images/TV.png',
+                order: 5
+            }, {
+                word: './images/shows.png',
+                order: 6
+            }, {
+                word: './images/jh.png',
+                order: 7
+            }]
+        }, {
+            sound: './sound/s6.mp3',
+            list: [{
+                word: "./images/Did.png",
+                order: 1
+            }, {
+                word: './images/you.png',
+                order: 2
+            }, {
+                word: './images/do.png',
+                order: 3
+            }, {
+                word: './images/anything.png',
+                order: 4
+            }, {
+                word: './images/else.png',
+                order: 5
+            }, {
+                word: './images/1.png',
+                order: 6
+            }]
+        }, {
+            sound: './sound/s7.mp3',
+            list: [{
+                word: "./images/We.png",
+                order: 1
+            }, {
+                word: './images/drank.png',
+                order: 2
+            }, {
+                word: './images/tea.png',
+                order: 3
+            }, {
+                word: './images/in.png',
+                order: 4
+            }, {
+                word: './images/the.png',
+                order: 5
+            }, {
+                word: './images/afternoon.png',
+                order: 6
+            }, {
+                word: './images/and.png',
+                order: 7
+            }, {
+                word: './images/watched.png',
+                order: 8
+            }, {
+                word: './images/TV.png',
+                order: 9
+            }, {
+                word: './images/jh.png',
+                order: 10
+            }]
+        }, {
+            sound: './sound/s8.mp3',
+            list: [{
+                word: "./images/I.png",
+                order: 1
+            }, {
+                word: './images/stayed.png',
+                order: 2
+            }, {
+                word: './images/at.png',
+                order: 3
+            }, {
+                word: './images/home.png',
+                order: 4
+            }, {
+                word: './images/and.png',
+                order: 5
+            }, {
+                word: './images/watched.png',
+                order: 6
+            }, {
+                word: './images/TV.png',
+                order: 7
+            }, {
+                word: './images/jh.png',
+                order: 8
+            }]
+        }]
+    </script>
+    <script src="../../../../template/gao-neng-lie-che/index.js"></script>
+</body>
+
+</html>

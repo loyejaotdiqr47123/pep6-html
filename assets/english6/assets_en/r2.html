@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>小学英语</title>
+<meta charset=utf-8>
+<meta name="keywords" content="小学英语">
+<meta name="description" content="小学英语">
+<meta name="author" content="本站由杭州翰臣科技有限公司进行全程策划/页面设计/程序开发完成.24小时技术支持——翰臣科技：http://www.68team.com">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/video.css">
+<link rel="stylesheet" href="css/swiper.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body >
+
+	<div class="iall un1 r2_bookb">
+		<!-- 背景 -->
+		<img src="images/u1/a/book/bg.png" alt="英语">
+		<!-- 云 -->
+		<div class="iyun">
+			<img src="images/yun1.png" alt="英语"> 
+			<img src="images/yun2.png" alt="英语"> 
+			<img src="images/yun3.png" alt="英语"> 
+			<img src="images/yun4.png" alt="英语"> 
+		</div>
+
+		<!-- 松鼠 -->
+		<div class="songshu6 alltime2s">
+			<img src="images/u1/a/book/ss.png" alt="英语">
+		</div>
+
+		<!-- 主体内容 -->
+		<div class="ubox">
+			<div class="box">
+
+				<div class="video">
+					
+					<!-- 背景图片 -->
+					<img src="video/r2/bg.png" alt="英语">
+					<!-- 对话框 -->
+					<dl class="unbox">
+						
+						<!-- write -->
+						<dd>
+							<div class="write">
+								<div class="swiper-container  swiper1 stop-swiping">
+									<div class="swiper-wrapper ">
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="video/r2/1_1.mp4" ></video>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="" ></video>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="" ></video>
+											</div>
+										</div>
+										
+									</div>
+									<div class="swiper-button-prev prev1 pbtn alltime"></div>
+									<div class="swiper-button-next next1 pbtn alltime"></div>
+									<div class="bf"></div>
+								</div>
+							</div>
+						</dd>
+
+
+						<!-- write2 -->
+						<dd>
+							<div class="write2">
+								<div class="swiper-container  swiper2 stop-swiping">
+									<div class="swiper-wrapper ">
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="video/r2/2_1.mp4" ></video>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="" ></video>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="" ></video>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="" ></video>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="sbox clearfix alltime">
+												<video src="" ></video>
+											</div>
+										</div>
+										
+									</div>
+									<div class="swiper-button-prev prev2 pbtn alltime"></div>
+									<div class="swiper-button-next next2 pbtn alltime"></div>
+								</div>
+							</div>
+						</dd>
+
+
+
+
+					</dl>
+					
+					<!-- 视频 -->
+					
+					<!-- 底部按钮对应内容 -->
+				</div>
+				
+
+
+			</div>
+			<!-- 底部按钮 -->
+			<div class="ubtn clearfix alltime ">
+				<span data-img="video/r2/bg.png" data-src="video/r2/1_1.mp4"> <img src="images/u1/a/book/anniu/fbg6.png" alt="英语"><img src="images/u1/a/book/anniu/fbg_x6.png" alt="英语"> <div><img src="images/u1/a/book/zi/pigs.png" alt="英语"></div></span>
+				<span data-img="video/r2/bg.png" data-src="video/r2/2_1.mp4"> <img src="images/u1/a/book/anniu/fbg1.png" alt="英语"><img src="images/u1/a/book/anniu/fbg_x1.png" alt="英语"> <div><img src="images/u1/a/book/zi/cap.png" alt="英语"></div></span>
+			</div>
+		</div>
+
+		
+		
+		
+		<!-- 返回 -->
+
+
+		<a href="../index.html" class="fh fh2  alltime">
+			<img src="images/fh_g.png" alt="英语">
+			<img src="images/fhz.png" alt="英语">
+		</a>
+
+	</div>
+
+	<audio src=""  preload="meta "  class="hidead" ></audio>
+	<audio src=""  preload="meta "  class="hidead2" ></audio>
+
+
+
+
+
+
+	<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+	<script type='text/javascript' src='js/JR.js'></script>
+	<script type='text/javascript' src="js/video.js"></script>
+	<script type='text/javascript' src='js/swiper.min.js'></script>
+
+	<script type="text/javascript">
+
+		// 返回
+		
+		setTimeout(function () {$('.iall .songshu6').addClass('act'); }, 300);
+		$(function(){
+
+			// 底部按钮
+			$(".r2_bookb .ubtn span").eq(0).addClass('act');
+
+			$(".r2_bookb .ubtn span").on('click',function(){
+				$(this).stop(true,false).addClass('act ').siblings().stop(true,false).removeClass('act');
+				var idx=$(this).index();
+				$('.r2_bookb .ubox .box .video .unbox dd').eq(idx).show().siblings().hide();
+				
+			});
+			
+
+			// write
+
+			var swiper1;
+			var swiper2;
+			swiper1 = new Swiper('.swiper1',
+			{
+				autoplay:10,
+				speed: 10,
+				effect : 'fade',
+				slidesPerView: 1,
+				paginationClickable: true,
+				spaceBetween: 0,
+				autoplayDisableOnInteraction: false,
+				noSwiping: true,
+				noSwipingClass: 'stop-swiping',
+				prevButton: '.prev1',
+				nextButton: '.next1',
+				onSlideChangeEnd: function (swiper1) {
+					$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video').trigger('pause');
+					var idx=swiper1.realIndex;
+					if(idx==0){
+						swiper1.stopAutoplay();
+						$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide:nth-child(1) video').stop(true,false).attr({src:'video/r2/1_1.mp4'}).trigger('play');
+						$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video').on('ended',function(){
+							swiper1.startAutoplay();
+						})
+					}
+					if(idx==1){
+						swiper1.stopAutoplay();
+						$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide:nth-child(2) video').stop(true,false).attr({src:'video/r2/1_2.mp4'}).trigger('play');
+						$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video').on('ended',function(){
+							swiper1.startAutoplay();
+						})
+					}
+					if(idx==2){
+						swiper1.stopAutoplay();
+						$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide:nth-child(3) video').stop(true,false).attr({src:'video/r2/1_3.mp4'}).trigger('play');
+						$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video').on('ended',function(){
+							swiper1.stopAutoplay();
+						})
+					}
+
+				},
+
+			});
+			swiper1.slideTo(0, 10, false);
+			$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video').trigger('pause');
+
+			
+			$(".r2_bookb .ubtn span:nth-child(2)").on('click',function(){
+				swiper2 = new Swiper('.swiper2',
+				{
+					autoplay:10,
+					speed: 10,
+					effect : 'fade',
+					slidesPerView: 1,
+					paginationClickable: true,
+					spaceBetween: 0,
+					autoplayDisableOnInteraction: false,
+					noSwiping: true,
+					noSwipingClass: 'stop-swiping',
+					prevButton: '.prev2',
+					nextButton: '.next2',
+					onSlideChangeEnd: function (swiper2) {
+						$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').trigger('pause');
+						var idx=swiper2.realIndex;
+						if(idx==0){
+							swiper2.stopAutoplay();
+							
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide:nth-child(1) video').stop(true,false).attr({src:'video/r2/2_1.mp4'}).trigger('play');
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').on('ended',function(){
+								swiper2.startAutoplay();
+							})
+						}
+						if(idx==1){
+							swiper2.stopAutoplay();
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide:nth-child(2) video').stop(true,false).attr({src:'video/r2/2_2.mp4'}).trigger('play');
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').on('ended',function(){
+								swiper2.startAutoplay();
+							})
+						}
+						if(idx==2){
+							swiper2.stopAutoplay();
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide:nth-child(3) video').stop(true,false).attr({src:'video/r2/2_3.mp4'}).trigger('play');
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').on('ended',function(){
+								swiper2.startAutoplay();
+							})
+						}
+						if(idx==3){
+							swiper2.stopAutoplay();
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide:nth-child(4) video').stop(true,false).attr({src:'video/r2/2_4.mp4'}).trigger('play');
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').on('ended',function(){
+								swiper2.startAutoplay();
+							})
+						}
+						if(idx==4){
+							swiper2.stopAutoplay();
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide:nth-child(5) video').stop(true,false).attr({src:'video/r2/2_5.mp4'}).trigger('play');
+							$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').on('ended',function(){
+								swiper2.stopAutoplay();
+							})
+						}
+
+
+					},
+
+				});
+				$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').trigger('pause');
+				$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video').trigger('pause');
+				$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide:nth-child(1) video').stop(true,false).attr({src:'video/r2/2_1.mp4'}).trigger('play');
+				swiper2.stopAutoplay();
+				swiper2.slideTo(0, 10, false);
+				$(".r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video").on('ended',function(){
+					swiper2.startAutoplay();
+					
+				})
+				
+			});
+
+			$(".r2_bookb .ubtn span:nth-child(1)").on('click',function(){
+				$('.r2_bookb .ubox .box .video .write2 .swiper2 .swiper-slide video').trigger('pause');
+				$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video').trigger('pause');
+				$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide:nth-child(1) video').stop(true,false).attr({src:'video/r2/1_1.mp4'}).trigger('play');
+				swiper1.stopAutoplay();
+				swiper1.slideTo(0, 10, false);
+				$('.r2_bookb .ubox .box .video .write .swiper1 .bf').fadeOut();
+				$(".r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video").on('ended',function(){
+					swiper1.startAutoplay();
+				})
+				
+			});
+
+
+
+			
+
+
+			$('.r2_bookb .ubox .box .video .write .swiper1 .bf').on('click',function(){
+				$(this).fadeOut();
+				$('.r2_bookb .ubox .box .video .write .swiper1 .swiper-slide:nth-child(1) video').trigger('play');
+				$(".r2_bookb .ubox .box .video .write .swiper1 .swiper-slide video").on('ended',function(){
+					swiper1.startAutoplay();
+				})
+			});
+
+
+		});
+
+	</script>
+</body>
+
+</html>

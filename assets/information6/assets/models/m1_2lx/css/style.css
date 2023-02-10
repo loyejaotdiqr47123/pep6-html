@@ -1,0 +1,98 @@
+body {
+  background: transparent;
+}
+.lyl {
+  background: url(../images/background.png) center / contain no-repeat;
+  padding: 86px 0 40px;
+  width: 1260px;
+  /*margin: auto;*/
+}
+.lyl .show {
+  position: relative;
+  max-width: 885px;
+  cursor: pointer;
+  margin: auto;
+  width: 80%;
+}
+.lyl .show .top {
+  height: 61px;
+}
+.select_equ {
+  margin-top: 14%;
+  position: relative;
+  text-align: center;
+  
+}
+.select_equ .common_tit{
+  font-size: 34px;
+}
+.select_equ dl dt{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+.select_equ dl {
+  line-height: 10%;
+}
+.select_equ dl dt div{
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.right{
+  display: none;
+  position:absolute ;
+  right: 0;
+  top: 0;
+}
+
+.err{
+  display: none;
+  position:absolute ;
+  right: 0;
+  top: 0;
+}
+
+.select_info{
+  width: 15%;
+  height:30px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+}
+.common_tit input{
+  width: 12%;
+  height: 10%;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+}
+
+.input_img{
+  margin: 100px auto;
+  width: 87%;
+  background: url(../images/net_info.png) 0% 100% no-repeat;
+  height: 180px;
+}
+.input_img textarea{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0px;
+  font-family: Alibaba-PuHuiTi;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: -0.7px;
+  color: #ffffff;
+  text-shadow: 2.5px 1.7px 0px #1b7afa;
+  text-indent: 2em;
+  line-height: 61px;
+}
+.input_img textarea{
+  overflow-x: hidden;
+}
+
+.input_img textarea::-webkit-scrollbar { 
+  width: 0px;
+  height: 0px;
+  background-color: rgb(182, 214, 226);
+}

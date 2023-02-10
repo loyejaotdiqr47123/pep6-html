@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>试一试</title>
+
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl">
+    <div class="show">
+      <div class="top">
+          <div class="common_tit" style="text-align: center;">调查5G技术在当前的应用情况。</div>
+          <div class="input_img">
+                <textarea>
+
+                </textarea>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="err_model flex" style="display: none;">
+    <img src="../../pics/err_ani.gif" alt="" style="position: absolute;top: 25%;left: 25%;"/>
+    <audio src="../../audio/err.mp3"></audio>
+  </div>
+  <div class="right_model flex" style="display: none;">
+    <img src="../../pics/right_ani.gif" alt="" style="position: absolute;top: 25%;left: 38%;"/>
+    <audio src="audio/right.mp3"></audio> 
+  </div>
+</div>
+<audio id="audio" src="" ></audio>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+    $('.select_equ .common_tit').on("input propertychange","input",function(){
+        var _this = $(this);
+        // console.log(_this.val())
+         if(_this.val() == ""){
+             return
+         }
+
+          if(_this.val() == "a" || _this.val() == "A"){
+            $('.right_model').css({'display':'block'})
+            $('.right_model audio').trigger('play')
+            setTimeout(function(){
+                $('.right_model').css({'display':'none'})
+            },500)
+          }else{
+            $('.err_model').css({'display':'block'})
+            $('.err_model audio').trigger('play')
+            setTimeout(function(){
+                    $('.err_model').css({'display':'none'})
+            },500)
+          }
+
+       
+    })
+</script>
+</html>
+

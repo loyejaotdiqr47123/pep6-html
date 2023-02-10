@@ -1,0 +1,136 @@
+html, body, p, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow: hidden;
+}
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ul,li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 主内容 */
+.content {
+  width: 100%;
+  /* max-width:880px; */
+  /* height: 600px; */
+  /* margin: 30px auto 0; */
+  position: relative;
+  overflow: hidden;
+}
+/* 背景图 */
+.content>img {
+  display: block;
+}
+/* 选项列表 */
+#check-list {
+  width: 4%;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* margin-top: 1vw; */
+  position: absolute;
+  left:13.95%;
+  top: 5.9%;
+  height: 40%;
+}
+#check-list li {
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  overflow: hidden;
+}
+
+#check-list li:nth-child(1){
+  top: 9%;
+  left: 0%;
+}
+
+#check-list li:nth-child(2){
+  top: 22.5%;
+  left: 0%;
+}
+
+#check-list li:nth-child(3){
+  top: 35.6%;
+  left: 0%;
+}
+
+#check-list li:nth-child(4){
+  top: 49.1%;
+  left: 0%;
+}
+
+#check-list li:nth-child(5){
+  top: 62.5%;
+  left: 0%;
+}
+#check-list li:nth-child(6){
+  top: 75.5%;
+  left: 0%;
+}
+
+
+
+
+#check-list li div {
+  width: 2.5vw;
+  height: 2.5vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+/* 移动后对应位置 */
+#check-list li .list-item1 {
+  left: 0.7vw;
+  top: 0.7vw;
+}
+#check-list li .list-item2 {
+  left: 0.7vw;
+  top: 0.7vw;
+}
+
+
+
+/* 数字列表 */
+#number-list {
+  /* width: 100%;
+  height: 5vw;
+  display: flex;
+  justify-content: center; */
+  /* margin-top: 100px; */
+  /* z-index: 5; */
+}
+#number-list div {
+  width: 2.5vw;
+  height: 2.5vw;
+  text-align: center;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  z-index: 5;
+}
+.list-item1 {
+  left: 3vw;
+  background-image: url('./images/correct.png');
+  top: 20%;
+
+}
+.list-item2 {
+  top: 30%;
+  left: 3vw;
+  background-image: url('./images/error.png');
+}
+#number-list div img {
+  display: block;
+}

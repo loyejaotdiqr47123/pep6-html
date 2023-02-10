@@ -1,0 +1,70 @@
+@import '../css/index.css';
+
+@font-face {
+  font-family: "com";
+  src: url("../font/COMIC.woff") format("woff"),
+       url("../font/COMIC.ttf") format("truetype"),
+       url("../font/COMIC.eot") format("embedded-opentype"),
+       url("../font/COMIC.svg") format("svg"),
+       url("../font/COMIC.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.data-Panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+#word-box {
+  width: 100%;
+  height: 82%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.word {
+  width: 7vw;
+  height: 7vw;
+  font-family: 'com';
+  color: #fff;
+  text-align: center;
+  line-height: 8vw;
+  position: absolute;
+  background: url('./images/apple.png') center no-repeat;
+  background-size: contain;
+}
+#chook {
+  width: 7vw;
+  height: 12vw;
+  background: url('./images/chook.png') center no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 10vw;
+}
+#notice {
+  font-family: 'com';
+  font-size: 4vw;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  right: 19vw;
+  top: 38vw;
+}
+
+.jump {
+  animation: jump 0.5s;
+}
+@keyframes jump {
+  0% {
+    bottom: 10vw;
+  }
+  50% {
+    bottom: 18vw;
+  }
+  100% {
+    bottom: 10vw;
+  }
+}

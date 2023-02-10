@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快乐拼字</title>
+    <link rel="stylesheet" href="../../../../template/kuai-le-pin-zi/index.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <img width="100%" src="../../../../template/kuai-le-pin-zi/images/bg.png" alt="">
+        <!-- 开始 -->
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/kuai-le-pin-zi/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+
+                </div>
+            </div>
+        </div>
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">90</span>
+        </div>
+
+        <!-- 猴子 -->
+        <div id="monkey">
+            <img width="100%" src="../../../../template/kuai-le-pin-zi/images/monkey.png" alt="">
+        </div>
+
+        <!-- 篮子 -->
+        <div id="basket">
+            <span id="text_info"></span>
+        </div>
+
+        <div id="sound-box">
+        </div>
+        <ul id="list-box"></ul>
+        <ul id="option-box">
+        </ul>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 90
+            // 图片路径
+        var imgPath = {
+            scoringCorrect: '../../../../template/images/scoring-correct.png',
+            scoringError: '../../../../template/images/scoring-error.png',
+            monkey: '../../../../template/kuai-le-pin-zi/images/monkey.png', // 猴子1
+            monkey2: '../../../../template/kuai-le-pin-zi/images/monkey2.png', // 猴子2
+            apple: '../../../../template/kuai-le-pin-zi/images/apple.png' // 苹果
+        }
+        const data = [{
+            sound: './sound/gameSound5.mp3', // 音频
+            allLetter: 'fdAugestm',
+            word: 'Augest'
+        }, {
+            sound: './sound/gameSound4.mp3', // 音频
+            allLetter: 'plbikengqa',
+            word: 'bike'
+        }, {
+            sound: './sound/gameSound3.mp3', // 音频
+            allLetter: 'xforestgal',
+            word: 'forest'
+        }, {
+            sound: './sound/gameSound7.mp3', // 音频
+            allLetter: 'pkmgofishingjh',
+            word: 'gofishing'
+        }, {
+            sound: './sound/gameSound2.mp3', // 音频
+            allLetter: 'sholidayje',
+            word: 'holiday'
+        }, {
+            sound: './sound/gameSound8.mp3', // 音频
+            allLetter: 'lkhurtgb',
+            word: 'hurt'
+        }, {
+            sound: './sound/gameSound9.mp3', // 音频
+            allLetter: 'ialunchgd',
+            word: 'lunch'
+        }, {
+            sound: './sound/gameSound10.mp3', // 音频
+            allLetter: 'sphotoldy',
+            word: 'photo'
+        }, {
+            sound: './sound/gameSound6.mp3', // 音频
+            allLetter: 'xmhspringy',
+            word: 'spring'
+        }, {
+            sound: './sound/gameSound1.mp3', // 音频
+            allLetter: 'huyesterdayl',
+            word: 'yesterday'
+        }]
+    </script>
+    <script src="../../../../template/kuai-le-pin-zi/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>云海穿梭</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="content">
+    <img width="100%" src="./images/bg.png" alt="">
+    <!-- 开始 -->
+    <div id="rule">
+      <button class="start-btn" onclick="start()"></button>
+      <!-- <img src="../../../../template/ba-he-bi-sai/images/rule.png" alt=""> -->
+    </div>
+    <!-- 结束 -->
+    <div id="over-box">
+      <div id="panel">
+        <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+        <p id="over-time">时间：</p>
+        <p id="over-integral">得分：</p>
+        <a class="refresh" href="javascript:location.reload();">
+          <img width="100%" src="../../../../template/images/refresh.png" alt="">
+        </a>
+        <div id="mistakes">
+
+        </div>
+      </div>
+    </div>
+    <!-- 计分板 -->
+    <div class="information">
+      <span id="HP">3</span>
+      <span id="grade">0</span>
+      <span id="count-down">90</span>
+    </div>
+    <!-- 云海 -->
+    <div class="clouds-box">
+      <img class="stage" src="./images/stage.png" alt="">
+    </div>
+    <!-- 起点 -->
+    <div class="origin">
+      <img width="100%" src="./images/origin.png" alt="">
+    </div>
+    <div class="topic">
+      <img id="topic-img" width="100%" src="" alt="">
+    </div>
+    <ul id="options">
+      
+    </ul>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

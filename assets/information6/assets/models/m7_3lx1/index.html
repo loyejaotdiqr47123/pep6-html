@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>连线demo</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl flex f-dc">
+    <div class="show">
+      <div class="common_tit title_img">
+        <img src="images/kzmk.png" alt="" />
+      </div>
+      <div class="xx_o flex">
+        <ul class="xx">
+          <li class="flex f-js"><span class="flex">A</span>&nbsp; 控制模块，接收传感器信息、向执行模块发布指令。</li>
+          <li class="flex f-js"><span class="flex">B</span>&nbsp; 传感模块，接收外界信息、并将信息传递给控制模块。</li>
+          <li class="flex f-js"><span class="flex">C</span>&nbsp; 执行模块，接收控制模块的指令并完成相应的任务。</li>
+        </ul>
+      </div>
+      <div class="tools game_btn_group flex">
+        <div class="saveImageBtn game_btn tj"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="err_model flex" style="display: none;">
+  <img src="../../pics/err_ani.gif" alt="">
+  <audio src="../../audio/err.mp3"></audio>
+</div>
+<div class="right_model flex" style="display: none;">
+  <img src="../../pics/right_ani.gif" alt="">
+  <audio src="../../audio/right.mp3"></audio>
+</div>
+</body>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript"> 
+  var num = 1;
+  var zqstring = ""
+  var start = false
+  $(function () {
+    $('.xx').on('click', 'li', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+    $('.show .tj').on('click', function () {
+      $('.err_model').fadeOut()
+      var index = $('.show .xx li.active').index()
+      console.log(index)
+      if(num == 3){
+        $('.err_model').fadeOut()
+          if (index == 2) {
+              $('.right_model').fadeIn()
+              $('.right_model audio').trigger('play')
+            }else{
+              $('.err_model').fadeIn()
+              $('.err_model audio').trigger('play')
+          }
+    
+       }
+       if(num == 2){
+      
+      if (index == 1) {
+          num++
+          $('.right_model').fadeIn()
+          $('.right_model audio').trigger('play')
+          $('.title_img img').attr('src','images/zxmk.png')
+        }else{
+              $('.err_model').fadeIn()
+              $('.err_model audio').trigger('play')
+        }
+
+   }
+
+       if(num == 1){
+          if (index == 0) {
+             num++
+              $('.right_model').fadeIn()
+              $('.right_model audio').trigger('play')
+              $('.title_img img').attr('src','images/cgmk.png')
+            }else{
+              $('.err_model').fadeIn()
+              $('.err_model audio').trigger('play')
+            }
+    
+       }
+    
+
+    })
+    $('.err_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+    $('.right_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+  })
+</script>
+</html>

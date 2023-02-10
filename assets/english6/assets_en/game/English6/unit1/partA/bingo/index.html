@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bingo</title>
+    <link rel="stylesheet" href="../../../../template/bingo/index.css">
+    <style>
+        #input-box {
+            left: 30vw;
+            margin-top: 1vw;
+        }
+        #title{
+            top: 7vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <!-- 背景 -->
+        <img class="bg" width="100%" src="../../../../template/bingo/images/bg.png" alt="">
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/bingo/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+
+                </div>
+            </div>
+        </div>
+        <div id="interface">
+            <div class="information">
+                <span id="HP">3</span>
+                <span id="grade">0</span>
+                <span id="count-down">100</span>
+            </div>
+            <div id="topic"></div>
+        </div>
+
+        <!-- 铅笔 -->
+        <img id="pencli" src="../../../../template/bingo/images/pencli.png" alt="">
+
+        <div class="plank">
+            <div id="title"></div>
+            <div id="input-box"></div>
+            <img id="light" src="../../../../template/bingo/images/light.png" alt="">
+            <div id="tip"></div>
+            <div class="btns">
+                <img id="back" src="../../../../template/bingo/images/back.png" alt="">
+                <img id="ok" src="../../../../template/bingo/images/ok.png" alt="">
+                <img id="clear" src="../../../../template/bingo/images/clear.png" alt="">
+            </div>
+            <ul id="letters"></ul>
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 100
+        var data = [{
+            title: "./images/gnqd.png",
+            tip: "",
+            wordKey: ['a', 'e', 'u', 'r', 't', 'n', 'o', 'n', 'b', 'k', 'y', 'g'],
+            word: 'younger'
+        }, {
+            title: "./images/ggd.png",
+            tip: "",
+            wordKey: ['a', 'h', 'u', 'p', 't', 'n', 'g', 'e', 'l', 'i', 's', 'r'],
+            word: 'taller'
+        }, {
+            title: "./images/gad.png",
+            tip: "",
+            wordKey: ['a', 'e', 'u', 'r', 'h', 's', 'n', 'q', 'p', 'r', 'o', 't'],
+            word: 'shorter'
+        }, {
+            title: "./images/gca.png",
+            tip: "",
+            wordKey: ['a', 'h', 'o', 'r', 'l', 'n', 'm', 'e', 'i', 'g', 'p', 'w'],
+            word: 'longer'
+        }, {
+            title: "./images/njgdd.png",
+            tip: "",
+            wordKey: ['a', 'h', 'u', 'l', 'r', 't', 'o', 'e', 'p', 'i', 'k', 'd'],
+            word: 'older'
+        }, {
+            title: "./images/b.png",
+            tip: "",
+            wordKey: ['a', 'h', 'u', 'l', 'r', 't', 'o', 'e', 'n', 'i', 'k', 'd'],
+            word: 'than'
+        }, {
+            title: "./images/njsl.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'r', 't', 'o', 'd', 'u', 'z', 'n', 'l', 'i'],
+            word: 'old'
+        }, {
+            title: "./images/ndg.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'r', 't', 's', 'p', 'u', 'm', 'n', 'l', 'i'],
+            word: 'tall'
+        }, {
+            title: "./images/tydg.png",
+            tip: "",
+            wordKey: ['a', 'e', 'g', 'r', 'h', 's', 'd', 'u', 't', 'n', 'l', 'i'],
+            word: 'tall'
+        }, {
+            title: "./images/nydz.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'e', 't', 's', 'd', 'u', 'v', 'y', 'l', 'i'],
+            word: 'heavy'
+        }, {
+            title: "./images/wy1.65mg.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'e', 't', 's', 'r', 'u', 'm', 'y', 'l', 'i'],
+            word: 'metres'
+        }, {
+            title: "./images/tzwd.png",
+            tip: "",
+            wordKey: ['e', 'h', 'g', 'r', 't', 'f', 'd', 'i', 'v', 'n', 'l', 'i'],
+            word: 'five'
+        }]
+    </script>
+    <script src="../../../../template/bingo/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bingo</title>
+    <link rel="stylesheet" href="../../../../template/bingo/index.css">
+    <style>
+        #input-box {
+            top: 9vw;
+            left: 30vw;
+        }
+        #title{
+            left: 22vw;
+            top: 7vw;
+        }
+        #title img{
+            width: auto;
+            position: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <!-- 背景 -->
+        <img class="bg" width="100%" src="../../../../template/bingo/images/bg.png" alt="">
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+
+                </div>
+            </div>
+        </div>
+        <div id="interface">
+            <div class="information">
+                <span id="HP">3</span>
+                <span id="grade">0</span>
+                <span id="count-down">100</span>
+            </div>
+            <div id="topic"></div>
+        </div>
+
+        <!-- 铅笔 -->
+        <img id="pencli" src="../../../../template/bingo/images/pencli.png" alt="">
+
+        <div class="plank">
+            <div id="title"></div>
+            <div id="input-box"></div>
+            <img id="light" src="../../../../template/bingo/images/light.png" alt="">
+            <div id="tip"></div>
+            <div class="btns">
+                <img id="back" src="../../../../template/bingo/images/back.png" alt="">
+                <img id="ok" src="../../../../template/bingo/images/ok.png" alt="">
+                <img id="clear" src="../../../../template/bingo/images/clear.png" alt="">
+            </div>
+            <ul id="letters"></ul>
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 100
+        var data = [{
+            title: "./images/have.png",
+            tip: "",
+            wordKey: ['a', 'e', 'u', 'h', 't', 'r', 'o', 'n', 'b', 'd', 'y', 'g'],
+            word: 'had'
+        }, {
+            title: "./images/sleep.png",
+            tip: "",
+            wordKey: ['a', 'h', 'u', 'p', 't', 'n', 'g', 'e', 'l', 'i', 's', 'r'],
+            word: 'slept'
+        }, {
+            title: "./images/read.png",
+            tip: "",
+            wordKey: ['a', 'e', 'u', 'r', 'h', 's', 'n', 'd', 'p', 'r', 'o', 't'],
+            word: 'read'
+        }, {
+            title: "./images/see.png",
+            tip: "",
+            wordKey: ['j', 'h', 'a', 'r', 'l', 's', 'm', 'e', 'i', 'g', 'p', 'w'],
+            word: 'saw'
+        }, {
+            title: "./images/drink.png",
+            tip: "",
+            wordKey: ['a', 'h', 'u', 'l', 'r', 't', 'o', 'e', 'n', 'i', 'k', 'd'],
+            word: 'drank'
+        }, {
+            title: "./images/go.png",
+            tip: "",
+            wordKey: ['a', 'h', 'u', 'l', 'r', 't', 'o', 'e', 'n', 'i', 'k', 'w'],
+            word: 'went'
+        }, {
+            title: "./images/ride.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'r', 't', 'o', 'd', 'u', 'd', 'n', 'e', 'i'],
+            word: 'rode'
+        }, {
+            title: "./images/hurt.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'r', 't', 's', 'p', 'u', 'm', 'n', 'l', 'i'],
+            word: 'hurt'
+        }, {
+            title: "./images/eat.png",
+            tip: "",
+            wordKey: ['a', 'e', 'g', 'r', 'h', 's', 'd', 'u', 't', 'n', 'l', 'i'],
+            word: 'ate'
+        }, {
+            title: "./images/take.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'e', 't', 's', 'd', 'u', 'o', 'k', 'l', 'i'],
+            word: 'took'
+        }, {
+            title: "./images/buy.png",
+            tip: "",
+            wordKey: ['a', 'h', 'g', 'o', 't', 's', 'r', 'u', 'b', 'y', 'l', 'i'],
+            word: 'bought'
+        }, {
+            title: "./images/fall.png",
+            tip: "",
+            wordKey: ['o', 'h', 'g', 'r', 'e', 'f', 'd', 'i', 'v', 'n', 'l', 'i'],
+            word: 'fell'
+        }, {
+            title: "./images/can.png",
+            tip: "",
+            wordKey: ['o', 'u', 'g', 'r', 'e', 'f', 'd', 'i', 'v', 'c', 'l', 'i'],
+            word: 'could'
+        }]
+    </script>
+    <script src="../../../../template/bingo/index.js"></script>
+</body>
+
+</html>

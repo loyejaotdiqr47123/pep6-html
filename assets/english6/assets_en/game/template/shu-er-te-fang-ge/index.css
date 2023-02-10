@@ -1,0 +1,195 @@
+@import '../css/index.css';
+
+.box {
+  width: 64.5vw;
+  height: 42vw;
+  position: absolute;
+  left: 48%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  background: url('./images/box.png') center no-repeat;
+  background-size: cover;
+}
+/* 计时器 */
+#timer-box {
+  width: 15vw;
+  font-size: 5vw;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 27vw;
+  top: 0.8vw;
+}
+#list-box {
+  width: 55.5vw;
+  height: 31.5vw;
+  position: relative;
+  margin-left: 7.2vw;
+  margin-top: 9vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+#list-box li {
+  height: 32%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#list-box li div {
+  width: 25%;
+  text-align: center;
+  position: relative;
+  background-image: url('./images/y-block.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#list-box li:nth-child(2) div:nth-child(2) {
+  margin-right: 11.1vw;
+}
+#list-box li div img{
+  height: 65%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 重新开始 */
+.anew {
+  width: 10.5vw;
+  position: absolute;
+  left: 29.7vw;
+  top: 19.7vw;
+  cursor: pointer;
+}
+.anew img {
+  display: block;
+}
+
+/* 预备遮挡 */
+#ready {
+  width: 95%;
+  height: 88%;
+  font-size: 5vw;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 50vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* 舞台 */
+.stage {
+  width: 97%;
+  position: absolute;
+  left: 50%;
+  bottom: 2vw;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* 跑马灯 */
+#marquee li {
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+#marquee li img {
+  display: block;
+}
+.light {
+  background-color: #fff;
+  box-shadow: 0 0 1vw 1vw #fff;
+}
+.light::after {
+  content: '';
+  width: 90%;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
+}
+#marquee li:nth-child(1) {
+  position: absolute;
+  left: 21.2vw;
+  top: 14vw;
+}
+#marquee li:nth-child(2) {
+  position: absolute;
+  left: 21.2vw;
+  top: 23vw;
+}
+#marquee li:nth-child(3) {
+  position: absolute;
+  left: 21.2vw;
+  top: 32vw;
+}
+#marquee li:nth-child(4) {
+  position: absolute;
+  left: 21.2vw;
+  top: 41vw;
+}
+#marquee li:nth-child(5) {
+  position: absolute;
+  left: 28vw;
+  top: 46.9vw;
+}
+#marquee li:nth-child(6) {
+  position: absolute;
+  left: 39vw;
+  top: 46.9vw;
+}
+#marquee li:nth-child(7) {
+  position: absolute;
+  left: 50vw;
+  top: 46.9vw;
+}
+#marquee li:nth-child(8) {
+  position: absolute;
+  left: 61vw;
+  top: 46.9vw;
+}
+#marquee li:nth-child(9) {
+  position: absolute;
+  left: 72vw;
+  top: 46.9vw;
+}
+
+#marquee li:nth-child(10) {
+  position: absolute;
+  left: 78.4vw;
+  top: 41vw;
+}
+
+#marquee li:nth-child(11) {
+  position: absolute;
+  left: 78.4vw;
+  top: 32vw;
+}
+
+#marquee li:nth-child(12) {
+  position: absolute;
+  left: 78.4vw;
+  top: 23vw;
+}
+
+#marquee li:nth-child(13) {
+  position: absolute;
+  left: 78.4vw;
+  top: 14vw;
+}

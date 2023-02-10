@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鳄鱼洗澡</title>
+    <link rel="stylesheet" href="../../../../template/xiao-e-yu-xi-zao/index.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <!-- 滚动背景 -->
+        <div class="roll-bg"></div>
+        <!-- 背景 -->
+        <img class="bg" width="100%" src="../../../../template/xiao-e-yu-xi-zao/images/bg.png" alt="">
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/xiao-e-yu-xi-zao/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+                </div>
+            </div>
+        </div>
+
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">150</span>
+        </div>
+
+        <div id="hint-box"></div>
+        <ul id="list-box"></ul>
+        <div class="btns">
+            <div onclick="ok()"></div>
+            <div onclick="showHint()"></div>
+        </div>
+
+        <img class="water" src="../../../../template/xiao-e-yu-xi-zao/images/water.png" alt="">
+        <!-- 鳄鱼 -->
+        <div class="crocodile-box">
+            <!-- <img class="crocodile" src="../../../../template/xiao-e-yu-xi-zao/images/crocodile.png" alt=""> -->
+            <img class="hand" src="../../../../template/xiao-e-yu-xi-zao/images/hand.png" alt="">
+            <!-- <img class="foam" src="../../../../template/xiao-e-yu-xi-zao/images/foam.png" alt=""> -->
+            <!-- <img class="bathtub" src="../../../../template/xiao-e-yu-xi-zao/images/bathtub.png" alt=""> -->
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 150
+        var data = [{
+            sound: './sound/s1.mp3',
+            chImg: './images/ch6.png',
+            hint: '你的鞋子多大',
+            list: [{
+                word: './images/What.png',
+                order: 1
+            }, {
+                word: './images/size.png',
+                order: 2,
+            }, {
+                word: './images/are.png',
+                order: 3
+            }, {
+                word: './images/your1.png',
+                order: 4,
+            }, {
+                word: './images/shoes.png',
+                order: 5
+            }, {
+                word: './images/1.png',
+                order: 6
+            }]
+        }, {
+            sound: './sound/s2.mp3',
+            chImg: './images/ch7.png',
+            hint: '我和你奶奶待在家里',
+            list: [{
+                word: './images/I.png',
+                order: 1
+            }, {
+                word: './images/stayed.png',
+                order: 2
+            }, {
+                word: './images/at.png',
+                order: 3
+            }, {
+                word: './images/home.png',
+                order: 4
+            }, {
+                word: './images/with.png',
+                order: 5
+            }, {
+                word: './images/your1.png',
+                order: 6
+            }, {
+                word: './images/grandma.png',
+                order: 7
+            }, {
+                word: './images/..png',
+                order: 8
+            }]
+        }, {
+            sound: './sound/s3.mp3',
+            chImg: './images/ch8.png',
+            hint: '你是怎么去那里的',
+            list: [{
+                word: './images/How.png',
+                order: 1
+            }, {
+                word: './images/did.png',
+                order: 2
+            }, {
+                word: './images/you.png',
+                order: 3
+            }, {
+                word: './images/go.png',
+                order: 4
+            }, {
+                word: './images/there.png',
+                order: 5
+            }, {
+                word: './images/1.png',
+                order: 6
+            }]
+        }, {
+            sound: './sound/s4.mp3',
+            chImg: './images/ch9.png',
+            hint: '我以前的旧学校里是没有图书馆的',
+            list: [{
+                word: './images/There1.png',
+                order: 1
+            }, {
+                word: './images/was.png',
+                order: 2
+            }, {
+                word: './images/no1.png',
+                order: 3
+            }, {
+                word: './images/library.png',
+                order: 4
+            }, {
+                word: './images/in.png',
+                order: 5
+            }, {
+                word: './images/my.png',
+                order: 6
+            }, {
+                word: './images/old.png',
+                order: 7
+            }, {
+                word: './images/school.png',
+                order: 8
+            }, {
+                word: './images/..png',
+                order: 9
+            }]
+        }, {
+            sound: './sound/s5.mp3',
+            chImg: './images/ch10.png',
+            hint: '你有多重。',
+            list: [{
+                word: './images/How.png',
+                order: 1
+            }, {
+                word: './images/heavy.png',
+                order: 2
+            }, {
+                word: './images/are.png',
+                order: 3
+            }, {
+                word: './images/you.png',
+                order: 4
+            }, {
+                word: './images/1.png',
+                order: 5
+            }]
+        }, {
+            sound: './sound/s6.mp3',
+            chImg: './images/ch5.png',
+            hint: '现在我在班级里非常活跃',
+            list: [{
+                word: './images/Now.png',
+                order: 1
+            }, {
+                word: './images/,.png',
+                order: 2
+            }, {
+                word: './images/I’m.png',
+                order: 3
+            }, {
+                word: './images/very.png',
+                order: 4
+            }, {
+                word: './images/active.png',
+                order: 5
+            }, {
+                word: './images/in.png',
+                order: 6
+            }, {
+                word: './images/class.png',
+                order: 7
+            }, {
+                word: './images/..png',
+                order: 8
+            }]
+        }, {
+            sound: './sound/s7.mp3',
+            chImg: './images/ch4.png',
+            hint: '你去过哪里?',
+            list: [{
+                word: './images/Where.png',
+                order: 1
+            }, {
+                word: './images/did.png',
+                order: 2
+            }, {
+                word: './images/you.png',
+                order: 3
+            }, {
+                word: './images/go.png',
+                order: 4
+            }, {
+                word: './images/1.png',
+                order: 5
+            }]
+        }, {
+            sound: './sound/s8.mp3',
+            chImg: './images/ch3.png',
+            hint: '我想买一本新的电影杂志',
+            list: [{
+                word: './images/I.png',
+                order: 1
+            }, {
+                word: './images/want.png',
+                order: 2
+            }, {
+                word: './images/to.png',
+                order: 3
+            }, {
+                word: './images/buy.png',
+                order: 4
+            }, {
+                word: './images/the.png',
+                order: 5
+            }, {
+                word: './images/new.png',
+                order: 6
+            }, {
+                word: './images/film.png',
+                order: 7
+            }, {
+                word: './images/magazine.png',
+                order: 8
+            }, {
+                word: './images/..png',
+                order: 9
+            }]
+        }, {
+            sound: './sound/s9.mp3',
+            chImg: './images/ch2.png',
+            hint: '你的脚比我大',
+            list: [{
+                word: './images/Your.png',
+                order: 1
+            }, {
+                word: './images/feet.png',
+                order: 2
+            }, {
+                word: './images/are.png',
+                order: 3
+            }, {
+                word: './images/bigger.png',
+                order: 4
+            }, {
+                word: './images/than.png',
+                order: 5
+            }, {
+                word: './images/mine.png',
+                order: 6
+            }, {
+                word: './images/..png',
+                order: 7
+            }]
+        }, {
+            sound: './sound/s10.mp3',
+            chImg: './images/ch1.png',
+            hint: '在大厅里这只恐龙最高',
+            list: [{
+                word: './images/That’s.png',
+                order: 1
+            }, {
+                word: './images/the.png',
+                order: 2
+            }, {
+                word: './images/tallest.png',
+                order: 3
+            }, {
+                word: './images/dinosaur.png',
+                order: 4
+            }, {
+                word: './images/in.png',
+                order: 5
+            }, {
+                word: './images/this.png',
+                order: 6
+            }, {
+                word: './images/hall.png',
+                order: 7
+            }, {
+                word: './images/..png',
+                order: 8
+            }]
+        }]
+    </script>
+    <script src="../../../../template/xiao-e-yu-xi-zao/index.js"></script>
+</body>
+
+</html>

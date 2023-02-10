@@ -1,0 +1,489 @@
+  body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  .bg {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    color: #eee;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .instructions {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    padding: 5px 15px;
+    color: #eee;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 15px;
+    color: #eee;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  canvas {
+    position: relative;
+    z-index: 2;
+    display: block;
+  }
+
+  #dot1 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:6vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot2 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:9.2vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot3 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:12.3vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot4 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:15.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot5 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:18.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot6 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:22vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot7 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:25vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot8 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:28vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot9 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:32.6vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot10 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:35.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot11 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:38.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot12 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:43.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot13 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:46.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot14 {
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:50vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot15{
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:53.2vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot16{
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:56.3vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot17{
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:59vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot18{
+    position: absolute;
+    width: 20vw;
+    height: 3vw;
+    left: 75%;
+    top:62.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot19{
+    position: absolute;
+    width: 20vw;
+    height: 3.5vw;
+    left: 75%;
+    top:66.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+
+
+  #dot20 {
+    position: absolute;
+    width: 10vw;
+    height: 5vw;
+    left: 57%;
+    top:53.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot21 {
+    position: absolute;
+    width: 7vw;
+    height: 5vw;
+    left: 49%;
+    top:51vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot22 {
+    position: absolute;
+    width: 10vw;
+    height: 8vw;
+    left: 37%;
+    top:56vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot23 {
+    position: absolute;
+    width: 19vw;
+    height: 8vw;
+    left: 48%;
+    top:58.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot24 {
+    position: absolute;
+    width: 10vw;
+    height: 16vw;
+    left: 30%;
+    top:40vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot25 {
+    position: absolute;
+    width: 10vw;
+    height: 19vw;
+    left: 65.5%;
+    top:55vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot26 {
+    position: absolute;
+    width: 12vw;
+    height: 6vw;
+    left: 53%;
+    top:68vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot27 {
+    position: absolute;
+    width: 13vw;
+    height: 8vw;
+    left: 40%;
+    top:65vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot28 {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    left: 17.5%;
+    top:42vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot29 {
+    position: absolute;
+    width: 10vw;
+    height: 4vw;
+    left: 20%;
+    top:49.5vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+  }
+
+  #dot30 {
+    position: absolute;
+    width: 10vw;
+    height: 4vw;
+    left: 23%;
+    top:51vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+  }
+  #dot31 {
+    position: absolute;
+    width: 10vw;
+    height: 10vw;
+    left: 2%;
+    top:48vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot32 {
+    position: absolute;
+    width: 10vw;
+    height: 8vw;
+    left: 8%;
+    top:50vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+    transform: rotate(-50deg);
+    -webkit-transform: rotate(-50deg);
+  }
+  #dot33 {
+    position: absolute;
+    width: 8vw;
+    height: 14vw;
+    left: 52%;
+    top:37vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot34 {
+    position: absolute;
+    width: 12vw;
+    height: 8vw;
+    left: 19%;
+    top:32vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot35 {
+    position: absolute;
+    width: 15vw;
+    height: 10vw;
+    left: 60%;
+    top:40vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot36 {
+    position: absolute;
+    width: 18vw;
+    height: 10vw;
+    left: 57%;
+    top:0vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  #dot37 {
+    position: absolute;
+    width: 10vw;
+    height: 8vw;
+    left: 31%;
+    top:32vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+  #dot38 {
+    position: absolute;
+    width: 10vw;
+    height: 9vw;
+    left: 8.5%;
+    top:18vw;
+    background: rgba(0, 0, 0, 0);
+    z-index: 3;
+    cursor: pointer;
+  }
+
+ 
+
+  #img1,.line-img {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+
+
+
+  #submit {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    z-index: 4;
+  }
+  #retry {
+    position: absolute;
+    bottom: 10%;
+    left: 55%;
+    z-index: 4;
+  }
+
+  #canvas {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    /* left: 20vw;
+    top: 20vw; */
+  }

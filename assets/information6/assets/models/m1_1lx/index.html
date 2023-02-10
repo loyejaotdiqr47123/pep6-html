@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>试一试</title>
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl">
+    <div class="show">
+      <div class="common_tit" style="text-align: center;text-indent: 0;margin-bottom: 92px;">学校机房内的网络是哪一种类型的网络？</div>
+      <div class="xx_o flex">
+        <ul class="xx">
+          <li class="flex f-js"><span class="flex">A</span>局域网</li>
+          <li class="flex f-js"><span class="flex">B</span>城域网</li>
+          <li class="flex f-js"><span class="flex">C</span>广域网</li>
+        </ul>
+      </div>
+
+      <div class="tools game_btn_group flex">
+        <div class="saveImageBtn game_btn cz"></div>
+        <div class="saveImageBtn game_btn tj"></div>
+      </div>
+    
+    </div>
+  </div>
+  <div class="err_model flex" style="display: none;">
+    <img src="../../pics/err_ani.gif" alt="" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);"/>
+    <audio src="../../audio/err.mp3"></audio>
+  </div>
+  <div class="right_model flex" style="display: none;">
+    <img src="../../pics/right_ani.gif" alt="" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);"/>
+    <audio src="audio/right.mp3"></audio> -->
+  </div>
+</div>
+<audio id="audio" src="" ></audio>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+   $('#audio').attr("src","audio/info.mp3").trigger('play')
+   $('.xx').on('click', 'li', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+    $('.show .tj').on('click', function () {
+      var index = $('.show .xx li.active').index()
+      if (index == 0) {
+              $('.right_model').fadeIn()
+              $('.right_model audio').trigger('play')
+            }else{
+              $('.err_model').fadeIn()
+              $('.err_model audio').trigger('play')
+            }
+    })
+    $('.show .cz').on('click', function () {
+      $('.show .xx li').removeClass('active')
+
+    })
+    $('.err_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+    $('.right_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+</script>
+</html>
+

@@ -1,0 +1,201 @@
+@import '../css/index.css';
+#hint-box {
+    width: 40vw;
+    height: 4.5vw;
+    color: #fff;
+    line-height: 4.5vw;
+    text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    position: absolute;
+    top: 4vw;
+    left: 37vw;
+    border-radius: 10px;
+    display: none;
+}
+
+#list-box {
+    width: 100%;
+    max-width: 100%;
+    /* height: 6vw; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 42vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#list-box img {
+    height: 100%;
+    margin-bottom: 0.5vw;
+}
+
+
+/* 红绿灯 */
+
+.signal {
+    width: 11vw;
+    height: 4vw;
+    position: absolute;
+    left: 45vw;
+    top: 6vw;
+    background: url('./images/signal.png') center no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.6vw 0.2vw 0 0.3vw;
+}
+
+.signal img {
+    width: 3vw;
+    border-radius: 50%;
+}
+
+.red-blink {
+    animation: redBlink 0.5s infinite;
+}
+
+@keyframes redBlink {
+    0% {
+        box-shadow: 0 0 1.5vw 0vw #e72133;
+    }
+    50% {
+        box-shadow: 0 0 1.5vw 0.6vw #e72133;
+    }
+    100% {
+        box-shadow: 0 0 1.5vw 0vw #e72133;
+    }
+}
+
+.green-blink {
+    animation: greenBlink 0.5s infinite;
+}
+
+@keyframes greenBlink {
+    0% {
+        box-shadow: 0 0 1.5vw 0vw #1dc846;
+    }
+    50% {
+        box-shadow: 0 0 1.5vw 0.6vw #1dc846;
+    }
+    100% {
+        box-shadow: 0 0 1.5vw 0vw #1dc846;
+    }
+}
+
+
+/* 火车 */
+
+#train {
+    width: 70vw;
+    position: absolute;
+    left: 70vw;
+    top: 14vw;
+}
+
+.train-move {
+    animation: trainMove 3s linear forwards;
+}
+
+@keyframes trainMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-180vw);
+    }
+}
+
+
+/*提示*/
+
+
+/* 木板 */
+
+#plank {
+    width: 15vw;
+    position: absolute;
+    left: 17.7vw;
+    top: 3.8vw;
+    transform-origin: 10% 100%;
+}
+
+#z-index {
+    position: absolute;
+    width: 16.5vw;
+    bottom: 15.4vw;
+    left: 10.6vw;
+}
+
+.plank-down {
+    animation: plankDown 0.5s forwards;
+}
+
+@keyframes plankDown {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(66.6deg);
+    }
+}
+
+.btns {
+    width: 29vw;
+    position: absolute;
+    left: 54.5vw;
+    top: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns div {
+    width: 10vw;
+    height: 5vw;
+    cursor: pointer;
+}
+
+.btns div:last-child {
+    background: url('./images/ok.png') center no-repeat;
+    background-size: contain;
+}
+
+.btns div:first-child {
+    background: url('./images/show.png') center no-repeat;
+    background-size: contain;
+}
+
+.word-left {
+    animation: wordLeft 0.3s forwards;
+}
+
+@keyframes wordLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -2vw, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.word-right {
+    animation: wordRight 0.3s forwards;
+}
+
+@keyframes wordRight {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -2vw, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}

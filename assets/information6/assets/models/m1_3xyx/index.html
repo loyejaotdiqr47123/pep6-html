@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>选一选</title>
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl">
+    <div class="show">
+      <div class="top">
+          <div class="common_tit">你能在下面的这些图片中找出3中输入设备吗？</div>
+          <div class="select_equ">
+           <dl>
+              <dt>
+                  <div class="drop" data-garget="#box2">
+                    <img src="images/10.png" alt=""   />
+                    <img class="right" src="images/right.png"/>
+                    <img class="err" src="images/err.png"/>
+                  </div>
+                  <div class="drop" data-garget="#box2">
+                    <img src="images/20.png" alt=""  />
+                    <img class="right" src="images/right.png"/>
+                    <img class="err" src="images/err.png"/>
+                  </div>
+                  <div class="drop" data-garget="#box2">
+                   <img src="images/30.png" alt="" />
+                   <img class="right" src="images/right.png"/>
+                   <img class="err" src="images/err.png"/>
+                  </div>
+              </dt>
+              <dt>
+                <div class="drop" data-garget="#box2">
+                  <img src="images/20.png" alt="" />
+                  <img class="right" src="images/right.png"/>
+                  <img class="err" src="images/err.png"/>
+                </div>
+                <div class="drop" data-garget="#box1">
+                  <img src="images/30.png" alt="" />
+                  <img class="right" src="images/right.png"/>
+                  <img class="err" src="images/err.png"/>
+                </div>
+                <div class="drop" data-garget="#box1">
+                  <img src="images/10.png" alt="" />
+                  <img class="right" src="images/right.png"/>
+                  <img class="err" src="images/err.png"/>
+                </div>
+              </dt>
+              <dt>
+                <div class="drop" data-garget="#box2">
+                  <img src="images/10.png" alt="" />
+                  <img class="right" src="images/right.png"/>
+                  <img class="err" src="images/err.png"/>
+                </div>
+                <div class="drop" data-garget="#box2">
+                  <img src="images/30.png" alt="" />
+                  <img class="right" src="images/right.png"/>
+                  <img class="err" src="images/err.png"/>
+                </div>
+                <div class="drop" data-garget="#box2">
+                  <img src="images/20.png" alt="" />
+                  <img class="right" src="images/right.png"/>
+                  <img class="err" src="images/err.png"/>
+                </div>
+              </dt>
+           </dl>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="err_model flex" style="display: none;">
+    <img src="../../pics/err_ani.gif" alt="" style="position: absolute;top: 25%;left: 25%;"/>
+    <audio src="../../audio/err.mp3"></audio>
+  </div>
+  <div class="right_model flex" style="display: none;">
+    <img src="../../pics/right_ani.gif" alt="" style="position: absolute;top: 25%;left: 38%;"/>
+    <audio src="audio/right.mp3"></audio> -->
+  </div>
+</div>
+<audio id="audio" src="" ></audio>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+    var num = 0;
+    var err_num = 0;
+    $('.drop').on('mousedown',function(e){
+      console.log(e.offsetX,e.offsetY)
+        var _this = $(this)
+        // console.log(_this.children('.right')[0])
+       var m = _this[0].dataset.garget;
+        $('.drop').on('mouseup',function(e){
+          console.log(e.offsetX,e.offsetY)
+        })
+       if(m == "#box2"){
+         num++ 
+        $(_this.children('.right')).css({'display':'block'})
+        $('.right_model audio').trigger('play')
+          if(num >= 3){
+           
+              $('.right_model').css({'display':'block'})
+              $('.right_model audio').on("ended",function(){                 
+              setTimeout(function(){
+                  $('.right_model').css({'display':'none'})
+                },1000)
+              })
+          }
+       }else{
+         err_num++;
+        $(_this.children('.err')).css({'display':'block'})
+        $('.err_model audio').trigger('play')
+         if(err_num >= 2){              
+          $('.err_model').css({'display':'block'})
+              $('.err_model audio').on("ended",function(){                 
+              setTimeout(function(){
+                  $('.err_model').css({'display':'none'})
+                },1000)
+              })
+           
+         }
+       }
+    })
+</script>
+</html>
+

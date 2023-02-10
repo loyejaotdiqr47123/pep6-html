@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>试一试</title>
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl">
+    <div class="show" >
+      <div class="common_tit" style="margin-top: -11%;">请你想一想，如果要实现右转弯，流程图应该怎样写呢？</div>
+     <div style="display: flex;flex-direction: row;text-align: center;">
+        <div class="bottom" style="flex: 1;"> 
+            <img src="images/10.png" alt="">
+          
+            <a href="javascript:;" id="box1"></a>
+            <a href="javascript:;" id="box2"></a>
+            <a href="javascript:;" id="box3"></a>
+            <a href="javascript:;" id="box4"></a>   
+  
+        </div>
+        <div class="top" style="flex: 1;">        
+            <div class="drop drop1" data-target="#box1">
+              <img src="images/2.png" alt="" />
+              <img class="right" src="images/right.png"/>
+              <img class="err" src="images/err.png"/> 
+            </div>
+            <div class="drop drop2" data-target="#box2">
+              <img src="images/1.png" alt="" />
+              <img class="right" src="images/right.png"/>
+              <img class="err" src="images/err.png"/>
+            </div>
+            <div class="drop drop3" data-target="#box4">
+              <img src="images/4.png" alt="" />
+              <img class="right" src="images/right.png"/>
+              <img class="err" src="images/err.png"/>
+            </div>
+            <div class="drop drop4" data-target="#box3">
+              <img src="images/3.png" alt="" />
+              <img class="right" src="images/right.png"/>
+              <img class="err" src="images/err.png"/>
+            </div>
+        </div>
+      </div>
+      <div class="tools game_btn_group" style=" text-align: center;">
+        <div class="saveImageBtn game_btn cz" style="display: inline-block;"></div>
+      </div>
+    </div>
+  
+  
+    <!--<div class="tools game_btn_group flex" style="width: 100%;">
+      <div class="game_btn fh"></div>
+    </div>-->
+  </div>
+  <div class="err_model flex" style="display: none;">
+    <img src="../../pics/err_ani.gif" alt="">
+    <audio src="../../audio/err.mp3"></audio>
+  </div>
+  <div class="right_model flex" style="display: none;">
+    <img src="../../pics/right_ani.gif" alt="">
+    <audio src="../../audio/right.mp3"></audio>
+    <audio src="audio/right.mp3"></audio>
+<!--    <div class="common_next"></div>-->
+  </div>
+</div>
+<audio src="audio/9.mp3" id="title"></audio>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+  // $('#title').trigger('play')
+
+  var count = 0
+  var totalNum = 4
+ 
+  $('.drop').on('mousedown', function (e) {
+    var _this = $(this)
+    var _target = $(_this.data('target'))
+    var _left = _this.css('left')
+    var _top = _this.css('top')
+   
+
+    var boxOffetLeft = $('.lyl .show').offset().left
+    var boxOffetTop = $('.lyl .show').offset().top
+
+    var offsetLeft = _this.offset().left - e.clientX - boxOffetLeft
+    var offsetTop = _this.offset().top - e.clientY - boxOffetTop
+
+    var isDown = true
+    _this.css('cursor', 'move')
+    var centerX = 0
+    var centerY = 0
+    _this.parents('body').find('.tip').fadeOut()
+    _this.find('.err').fadeOut()
+
+    $(window).on('mousemove', function (e) {
+      // console.log(_this)
+     
+      var left = offsetLeft + e.clientX
+      var top = offsetTop + e.clientY
+
+      _this.css({
+        left: left,
+        top: top
+      })
+    
+
+      centerX = left + _this.width() / 2
+      centerY = top + _this.height() / 2
+    })
+    $(window).on('mouseup', function (e) {
+      $(window).off('mousemove mouseup')
+      isDown = false
+      _this.css('cursor', 'default')
+      if (centerX > _target.offset().left - boxOffetLeft
+        && centerX < _target.offset().left - boxOffetLeft + _target.width()
+        && centerY > _target.offset().top - boxOffetTop
+        && centerY < _target.offset().top - boxOffetTop + _target.height()
+      ) {
+        // right
+        _this.stop().animate({
+          left: _target.offset().left - boxOffetLeft + _target.width() / 2 - _this.width() / 2,
+          top: _target.offset().top - boxOffetTop + _target.height() / 2 - _this.height() / 2 
+        }, 100)
+        _this.css('pointer-events', 'none')
+
+        _this.find('.right').fadeIn()
+        count++
+        if (count == totalNum) {
+          $('.right_model').fadeIn()
+          $('.right_model audio').eq(1).trigger('play')
+          setTimeout(()=>{
+            $('.right_model').fadeOut()
+          },1000)
+        } else {
+          $('.right_model audio').eq(0).trigger('play')
+        }
+      } else {
+        // err
+        huanyua(_this,_left,_top)
+        _this.find('.err').fadeIn()
+        setTimeout(()=>{
+          _this.find('.err').fadeOut()
+          },1000)
+      }
+    })
+    $('.show .cz').on("click",function(){
+       huanyua(_this,_left,_top)
+       count = 0
+       _this.css('pointer-events', 'visible')
+       _this.find('.right').fadeOut()
+       _this.find('.err').fadeOut()
+    })
+  })
+  function huanyua(nums,left1,top1){
+    var _this = nums
+    _this.stop().animate({
+          left: left1,
+          top: top1
+        }, 400)
+       
+       
+        $('.err_model audio').attr('src', 'audio/err'+Math.round(Math.random() + 1)+'.mp3')
+        $('.err_model audio').trigger('play')
+  }
+ 
+</script>
+</html>
+

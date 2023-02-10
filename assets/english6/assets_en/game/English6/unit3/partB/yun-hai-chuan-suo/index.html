@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云海穿梭</title>
+    <link rel="stylesheet" href="../../../../template/yun-hai-chuan-suo/index.css">
+    <style>
+        #topic-img {
+            width: 0vw;
+            top: 25vw;
+            right: 40vw;
+        }
+        
+        #topic-img>img {
+            width: 30vw;
+        }
+        
+        #topic-img>div>div:nth-child(1) img {
+            width: 15vw;
+        }
+        
+        #topic-img>div>div:nth-child(2) img {
+            width: 15vw;
+            margin-left: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <img width="100%" src="../../../../template/yun-hai-chuan-suo/images/bg.png" alt="">
+        <!-- 开始 -->
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/yun-hai-chuan-suo/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+
+                </div>
+            </div>
+        </div>
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">90</span>
+        </div>
+        <!-- 云海 -->
+        <div class="clouds-box">
+            <img class="island" src="../../../../template/yun-hai-chuan-suo/images/island.png" />
+            <ul id="options">
+
+            </ul>
+        </div>
+        <!-- 起点 -->
+        <div class="origin">
+            <img width="100%" src="../../../../template/yun-hai-chuan-suo/images/origin.png" alt="">
+        </div>
+        <!-- 小人 -->
+        <img id="kid" src="../../../../template/yun-hai-chuan-suo/images/kid.png" alt="">
+        <div id="topic-img">
+            <!-- <img id="topic-img" width="100%" src="" alt=""> -->
+        </div>
+    </div>
+    <script>
+        // 时间
+        var totalTime = 70
+        var data = [{
+            topicImg: "./images/I  __ to the zoo  last weekend..png",
+            sound: './sound/sound1.mp3',
+            option: [{
+                name: "./images/A.  went.png",
+                right: true
+            }, {
+                name: "./images/B.  going.png",
+                right: false
+            }, ]
+        }, {
+            topicImg: "./images/I am __ to the  park now..png",
+            sound: './sound/sound2.mp3',
+            option: [{
+                name: "./images/A.  going.png",
+                right: true
+            }, {
+                name: "./images/B.  went.png",
+                right: false
+            }, ]
+        }, {
+            //
+            topicImg: "./images/I am __ swimming  next Sunday..png",
+            sound: './sound/sound3.mp3',
+            option: [{
+                name: "./images/A.  go.png",
+                right: false
+            }, {
+                name: "./images/B.  going.png",
+                right: true
+            }, ]
+        }, {
+            topicImg: "./images/He likes to __  shopping on Sunday..png",
+            sound: './sound/sound4.mp3',
+            option: [{
+                name: "./images/A.  go.png",
+                right: true
+            }, {
+                name: "./images/B.  going.png",
+                right: false
+            }, ]
+        }, {
+            topicImg: "./images/Usually I __ to  school by bus..png",
+            sound: './sound/sound5.mp3',
+            option: [{
+                name: "./images/A.  go.png",
+                right: true
+            }, {
+                name: "./images/B.  going.png",
+                right: false
+            }, ]
+        }]
+    </script>
+    <script src="../../../../template/yun-hai-chuan-suo/index.js"></script>
+</body>
+
+</html>

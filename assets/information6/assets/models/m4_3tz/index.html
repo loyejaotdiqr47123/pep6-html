@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>试一试</title>
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl">
+    <div class="show flex f-dc">
+      <div class="play_wrap">
+        <img src="images/question_img1.png" alt="">
+        <ul>
+          <li>
+            <a href="javascript:;">1</a>
+            <a href="javascript:;">-1</a>
+          </li>
+          <li>
+            <a href="javascript:;">1</a>
+            <a href="javascript:;">-1</a>
+          </li>
+          <li>
+            <a href="javascript:;">1</a>
+            <a href="javascript:;">-1</a>
+          </li>
+          <li>
+            <a href="javascript:;">1</a>
+            <a href="javascript:;">-1</a>
+          </li>
+          <li>
+            <a href="javascript:;">1</a>
+            <a href="javascript:;">-1</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tools game_btn_group flex" style="width: 100%;margin-top: 40px;">
+        <div class="game_btn cz"></div>
+        <div class="game_btn tj"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="err_model flex" style="display: none;">
+  <img src="../../pics/err_ani.gif" alt="">
+  <audio src="../../audio/err.mp3"></audio>
+</div>
+<div class="right_model flex" style="display: none;">
+  <img src="../../pics/right_ani.gif" alt="">
+  <audio src="../../audio/right.mp3"></audio>
+</div>
+</body>
+<script src="../../js/jquery.min.js"></script>
+<script>
+  $(function () {
+    $('.play_wrap ul li a').on('click', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+
+    var rightAsw = [1, -1, -1 , -1 , 1]
+    var count = 0
+
+    $('.game_btn.tj').on('click', function () {
+      count = 0
+      for (var i = 0; i < rightAsw.length; i++) {
+        if (rightAsw[i] == $('.play_wrap ul li').eq(i).children('.active').text()) {
+          count++
+        } else {
+          $('.err_model').fadeIn()
+          $('.err_model audio').trigger('play')
+          break
+        }
+        if (count >= 3) {
+          $('.right_model').fadeIn()
+          $('.right_model audio').trigger('play')
+        }
+      }
+    })
+    $('.game_btn.cz').on('click', function () {
+      $('.play_wrap ul li a').removeClass('active')
+      count = 0
+    })
+
+    $('.err_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+    $('.right_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+  })
+</script>
+</html>
+

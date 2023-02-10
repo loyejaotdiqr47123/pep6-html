@@ -1,0 +1,226 @@
+@import '../css/index.css';
+#option-box {
+    width: 65vw;
+    height: 20vw;
+    position: absolute;
+    left: 50%;
+    bottom: 13vw;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+#option-box li {
+    width: 15vw;
+    height: 10vw;
+    color: #000;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all .1s;
+    position: absolute;
+    top: 5vw;
+}
+
+#option-box li img {
+    position: absolute;
+    top: 3vw;
+    left: 1.7vw;
+    width: 100%;
+}
+
+#option-box li:nth-child(1) {
+    background-image: url('./images/bowl1.png');
+    transition: all .6s linear;
+    left: 0vw;
+}
+
+#option-box li:nth-child(2) {
+    background-image: url('./images/bowl2.png');
+    transition: all .6s linear;
+    left: 25vw;
+}
+
+#option-box li:nth-child(3) {
+    background-image: url('./images/bowl3.png');
+    transition: all .6s linear;
+    left: 50vw;
+}
+
+.move1 {
+    animation: move1 .6s linear;
+    -ms-animation: move1 .6s linear;
+}
+
+.move2 {
+    animation: move2 .6s linear;
+    -ms-animation: move2 .6s linear;
+}
+
+@keyframes move1 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(0, -2vw, 0) scale(0.9);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+
+/* ie 取消动画 */
+
+@-ms-keyframes move1 {}
+
+@keyframes move2 {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(0, 2vw, 0) scale(1.1);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+
+/* ie 取消动画 */
+
+@-ms-keyframes move2 {}
+
+
+/* 魔术师 */
+
+.magician-box {
+    width: 30vw;
+    position: absolute;
+    top: 7.8vw;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+
+/* 眼睛 */
+
+.eyes {
+    width: 4.5vw;
+    position: absolute;
+    left: 14.8vw;
+    top: 8.8vw;
+    animation: eyesmove 1s infinite linear;
+    -ms-animation: eyesmove 1s infinite linear;
+    -webkit-animation: eyesmove 1s infinite linear;
+}
+
+@keyframes eyesmove {
+    0% {
+        transform: translate3d(-0.5vw, 0, 0);
+        -ms-transform: translate3d(-0.5vw, 0, 0);
+        -webkit-transform: translate3d(-0.5vw, 0, 0);
+    }
+    20% {
+        transform: translate3d(0.25vw, 0.1vw, 0);
+        -ms-transform: translate3d(0.25vw, 0.1vw, 0);
+        -webkit-transform: translate3d(-0.5vw, 0, 0);
+    }
+    50% {
+        transform: translate3d(0.5vw, 0, 0);
+        -ms-transform: translate3d(0.5vw, 0, 0);
+        -webkit-transform: translate3d(0.5vw, 0, 0);
+    }
+    70% {
+        transform: translate3d(-0.25vw, 0.1vw, 0);
+        -ms-transform: translate3d(-0.25vw, 0.1vw, 0);
+        -webkit-transform: translate3d(-0.25vw, 0.1vw, 0);
+    }
+    100% {
+        transform: translate3d(-0.5vw, 0, 0);
+        -ms-transform: translate3d(-0.5vw, 0, 0);
+        -webkit-transform: translate3d(-0.5vw, 0, 0);
+    }
+}
+
+
+/* ie 不执行动画 */
+
+@-ms-keyframes eyesmove {}
+
+
+/* 桌子 */
+
+.table {
+    width: 96%;
+    position: absolute;
+    left: 50%;
+    bottom: 2.4vw;
+    transform: translateX(-50%);
+}
+
+
+/* 正确加分 */
+
+.add {
+    color: red;
+    font-size: 3vw;
+    font-weight: 700;
+    text-shadow: 0 0 0.1vw #fff;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate3d(-50%, 0, 0);
+    animation: add 2s forwards;
+}
+
+@keyframes add {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-50%, -6vw, 0);
+        opacity: 0;
+    }
+}
+
+
+/* 错误减分 */
+
+.subtract {
+    color: green;
+    font-size: 3vw;
+    font-weight: 700;
+    text-shadow: 0 0 0.1vw #fff;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate3d(-50%, 0, 0);
+    animation: subtract 2s forwards;
+}
+
+@keyframes subtract {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-50%, -10vw, 0);
+        opacity: 0;
+    }
+}

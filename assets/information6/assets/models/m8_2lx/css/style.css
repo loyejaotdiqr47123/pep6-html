@@ -1,0 +1,146 @@
+body {
+  background: transparent;
+}
+.lyl {
+  background: url(../images/background.png) center / contain no-repeat;
+  padding: 150px 0 40px;
+  width: 1260px;
+  /*margin: auto;*/
+}
+.lyl .show {
+  position: relative;
+  max-width: 885px;
+  cursor: pointer;
+  margin: auto;
+  width: 80%;
+}
+.lyl .show::before{
+  clear: both;
+}
+.lyl .show .top {
+  /* height: 130px; */
+  width: 50%;
+  height: 100%;  
+  float:left;
+  overflow: hidden;
+}
+.lyl .show .top::before{
+  clear: both;
+}
+.lyl .show .top .drop {
+  position: absolute;
+  width: 206px;
+  z-index: 9;
+}
+.lyl .show .top .drop:nth-child(1) {
+  left:76%;
+  top: 28%;
+}
+.lyl .show .top .drop:nth-child(2) {
+  left: 76%;
+  top: 48%;
+}
+.lyl .show .top .drop:nth-child(3) {
+  left: 76%;
+  top: 68%;
+}
+.lyl .show .top .drop:nth-child(4) {
+  left: 76%;
+  top: 88%;
+}
+.lyl .show .top .tip {
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 130%;
+  -webkit-transform: translate(50%, -80%);
+  -moz-transform: translate(50%, -80%);
+  -ms-transform: translate(50%, -80%);
+  -o-transform: translate(50%, -80%);
+  transform: translate(50%, -80%);
+}
+.lyl .show .top .err,
+.lyl .show .top .right {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: translate(65%, -65%);
+  -moz-transform: translate(65%, -65%);
+  -ms-transform: translate(65%, -65%);
+  -o-transform: translate(65%, -65%);
+  transform: translate(65%, -65%);
+}
+.lyl .show .bottom {
+  position: relative;
+  margin-top: 30px;
+  float:left;
+  background: url(../images/10.png) no-repeat;
+}
+.lyl .show .bottom div {
+  position: absolute;
+  width: 30%;
+  height: 13%;
+}
+
+.lyl .show .bottom div img {
+  pointer-events: none;
+}
+.lyl .show .bottom div#box1 {
+  left: 29%;
+  top: 12.9%;
+}
+.lyl .show .bottom div#box2 {
+  left:28.8%;
+  top: 40.5%;
+}
+.lyl .show .bottom div#box3 {
+  left: 28.8%;
+  top: 68.5%;
+}
+.lyl .show .bottom div#box4 {
+  left:59.6%;
+  top: 12.5%;
+}
+.game_btn{
+  max-width: 222px;
+}
+.game_btn_group{
+  margin-top: 20px;
+}
+
+@media (max-width:1200px){
+  .show .bottom img{
+    width: 76%;
+  }
+  .lyl .show .bottom a{
+    width: 22%;
+  }
+  .lyl .show .top .drop {
+    position: absolute;
+    width: 160px;
+    z-index: 9;
+  }
+  .lyl .show .bottom a#box1 {
+    left: 39%;
+    top: 13.9%;
+  }
+  .lyl .show .bottom a#box2 {
+    left:39%;
+    top: 42.5%;
+  }
+  .lyl .show .bottom a#box3 {
+    left: 39%;
+    top: 71.5%;
+  }
+  .lyl .show .bottom a#box4 {
+    left:65.8%;
+    top: 14.5%;
+  }
+  .game_btn{
+    max-width: 222px;
+  }
+  .game_btn_group{
+    margin-top: 0px;
+  }
+}

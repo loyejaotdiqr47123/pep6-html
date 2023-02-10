@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空中大战</title>
+    <link rel="stylesheet" href="../../../../template/kong-zhong-da-zhan/index.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <!-- 滚动背景 -->
+        <div class="roll-bg"></div>
+
+        <!-- 背景 -->
+        <img class="bg" width="100%" src="../../../../template/kong-zhong-da-zhan/images/bg.png" alt="">
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/kong-zhong-da-zhan/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+                </div>
+            </div>
+        </div>
+
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">70</span>
+        </div>
+        <div id="topic">
+        </div>
+        <div class="xiaoniao"><img src="../../../../template/kong-zhong-da-zhan/images/xiaoniao.png" alt=""></div>
+        <div class="option-box">
+            <!-- 飞机 -->
+            <div id="aircraft" class="aircraft-box">
+                <img width="100%" src="../../../../template/kong-zhong-da-zhan/images/aircraft.png" alt="">
+                <img id="bullet" src="../../../../template/kong-zhong-da-zhan/images/bullet.png" alt="">
+                <img id="aircraft-explode" src="../../../../template/kong-zhong-da-zhan/images/explode.png" alt="">
+
+            </div>
+            <ul id="list-box">
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 70
+        var data = [{
+            topic: "./images/There __ only one small  building on a hill.png", // 题目
+            options: [ // 选项
+                {
+                    title: "./images/was.png",
+                    right: true // 是否正确
+                }, {
+                    title: "./images/are.png",
+                    right: false
+                }, {
+                    title: "./images/were.png",
+                    right: false
+                }
+            ]
+        }, {
+            topic: "./images/There __ no computers or  Internet in my time.png",
+            options: [{
+                title: "./images/were.png",
+                right: true
+            }, {
+                title: "./images/is.png",
+                right: false
+            }, {
+                title: "./images/are.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/The Americans __ about five days  to get there in 1969.png",
+            options: [{
+                title: "./images/took.png",
+                right: true
+            }, {
+                title: "./images/takes.png",
+                right: false
+            }, {
+                title: "./images/take.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/Are there any pandas in  the mountains1 ____________.png",
+            options: [{
+                title: "./images/Yes, there are.png",
+                right: true
+            }, {
+                title: "./images/Yes, there is..png",
+                right: false
+            }, {
+                title: "./images/No, there isn’t.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/How long is __ legs1 I think it is 76cm long.png",
+            options: [{
+                title: "./images/his.png",
+                right: true
+            }, {
+                title: "./images/your.png",
+                right: false
+            }, {
+                title: "./images/he.png",
+                right: false
+            }]
+        }, {
+            topic: "./images/One day I’m __ to visit the moon.png",
+            options: [{
+                title: "./images/going.png",
+                right: true
+            }, {
+                title: "./images/goes.png",
+                right: false
+            }, {
+                title: "./images/go.png",
+                right: false
+            }]
+        }]
+    </script>
+    <script src="../../../../template/kong-zhong-da-zhan/index.js"></script>
+    <script src="../../../../../js/jquery-1.11.3.min.js"></script>
+</body>
+
+</html>

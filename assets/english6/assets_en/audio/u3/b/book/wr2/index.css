@@ -1,0 +1,122 @@
+html, body, p, h1, h2 {
+  margin: 0;
+  padding: 0;
+}
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ul,li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 主内容 */
+.content {
+  width: 100%;
+  /* max-width:880px; */
+  /* height: 600px; */
+  /* margin: 30px auto 0; */
+  position: relative;
+  overflow: hidden;
+}
+/* 选项列表 */
+#check-list {
+  width: 85%;
+  justify-content: center;
+  /* margin-top: 1vw; */
+  position: absolute;
+  left: 4.8%;
+  top: 4vw;
+  height: 30vh;
+}
+#check-list li {
+  width: 6vw;
+  height: 6vw;
+  position: absolute;
+  overflow: hidden;
+  top: 7%;
+  left: 10%;
+}
+#check-list li:nth-child(2){
+  left: 41.5%;
+}
+#check-list li:nth-child(3){
+  left: 73%;
+}
+
+
+
+
+#check-list li div {
+  width: 2vw;
+  height: 3vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+/* 移动后对应位置 */
+
+#check-list li div {
+  left: 2vw;
+  top: 2vw;
+}
+
+
+#check-list li:nth-child(n + 5) div {
+  left: 1.5vw;
+  top: 1.5vw;
+}
+
+
+
+
+/* 数字列表 */
+#number-list {
+  width: 100%;
+  height: 5vw;
+  display: flex;
+  justify-content: center;
+  /* margin-top: 100px; */
+  margin: -7vw 0 0;
+}
+#number-list div {
+  width: 2vw;
+  height: 3vw;
+  text-align: center;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  top: 16%;
+}
+
+
+#number-list .list-item2{top: 25%;}
+
+#number-list .list-item3{top: 34%;}
+
+
+.list-item1 {
+  left: 5vw;
+  background-image: url('./images/1.png');
+}
+ .list-item2 {
+  left: 5vw;
+  background-image: url('./images/2.png');
+  
+}
+ .list-item3 {
+  left: 5vw;
+  background-image: url('./images/3.png');
+}
+
+
+#number-list div img {
+  display: block;
+}

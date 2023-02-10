@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <title>连线demo</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="gameBox">
+  <div class="lyl flex f-dc">
+    <div class="show">
+    
+      <div class="common_tit topic1">
+         <div class="text_1">
+           1. 想要单击名字链接到相应的演示文稿，在超链接中应该选择的按钮是
+           （<input type="text" maxlength="1" readonly style="opacity: 0;">）。
+          </div>
+          <div class="img_1">
+            <img src="images/1.png" alt="" />
+          </div>
+      </div> 
+      <div class="xx_o flex topic1">
+        <ul class="xx">
+          <li class="flex f-js"><span class="flex">A</span><img src="images/a.png" alt="" /></li>
+          <li class="flex f-js"><span class="flex">B</span><img src="images/b.png" alt=" " /></li>
+          <li class="flex f-js"><span class="flex">C</span><img src="images/c.png" alt=" " /></li>
+          <li class="flex f-js"><span class="flex">D</span><img src="images/d.png" alt=" " /></li>
+        </ul>
+      </div>
+       
+      <div class="common_tit topic2" style="text-align: center;">
+          2. 演示文稿不能对声音进行哪些操作
+          （<input type="text" maxlength="1" readonly style="opacity: 0;">）。
+     </div> 
+     <div class="xx_o flex topic2">
+       <ul class="xx ju">
+         <li class="flex f-js"><span class="flex">A</span>裁剪声音</li>
+         <li class="flex f-js"><span class="flex">B</span>淡入淡出</li>
+         <li class="flex f-js"><span class="flex">C</span>添加书签</li>
+         <li class="flex f-js"><span class="flex">D</span>去掉噪音</li>
+       </ul>
+     </div>
+      <div class="tools game_btn_group flex">
+        <div class="saveImageBtn game_btn cz"></div>
+        <div class="saveImageBtn game_btn tj"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="err_model flex" style="display: none;">
+  <img src="../../pics/err_ani.gif" alt="">
+  <audio src="../../audio/err.mp3"></audio>
+</div>
+<div class="right_model flex" style="display: none;">
+  <img src="../../pics/right_ani.gif" alt="">
+  <audio src="../../audio/right.mp3"></audio>
+</div>
+</body>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+
+<script type="text/javascript"> 
+   var num = 1
+  $(function () {
+    $('.xx').on('click', 'li', function () {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+    $('.show .cz').on('click',function(){
+      num = 1,
+      $('.show .xx ul li').removeClass('active')
+      $('.topic1').show()
+      $('.topic2').hide()
+    })
+    $('.show .tj').on('click', function () {    
+      var index = $('.show .xx li.active').index()
+      if(num == 2){
+           if(index == 3){
+            $('.right_model').fadeIn()
+            $('.right_model audio').trigger('play')
+           }else{
+            $('.err_model').fadeIn()
+            $('.err_model audio').trigger('play')
+           }
+       }
+
+
+       if(num == 1  ){
+          if(index == 0 ){
+            num++
+            $('.topic1').hide()
+            $('.topic2').show()
+            $('.show .xx li').removeClass('active')
+            $('.right_model').fadeIn()
+            $('.right_model audio').trigger('play')
+          }else{
+            $('.err_model').fadeIn()
+            $('.err_model audio').trigger('play')
+          }
+        
+       }
+    
+       
+       
+    })
+    $('.err_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+    $('.right_model audio').on('ended', function () {
+      $(this).parent().delay(1200).fadeOut()
+    })
+  })
+</script>
+</html>

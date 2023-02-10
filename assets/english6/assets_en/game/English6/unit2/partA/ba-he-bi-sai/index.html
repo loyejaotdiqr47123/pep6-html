@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拔河比赛</title>
+    <link rel="stylesheet" href="../../../../template/ba-he-bi-sai/index.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- 声音 -->
+        <audio id="audio-correct" src="../../../../template/sound/correct.mp3"></audio>
+        <audio id="aduio-error" src="../../../../template/sound/error.mp3"></audio>
+
+        <img width="100%" src="../../../../template/ba-he-bi-sai/images/bg.png" alt="">
+        <!-- 开始 -->
+        <div id="rule">
+            <button class="start-btn" onclick="start()"></button>
+            <img src="../../../../template/ba-he-bi-sai/images/rule.png" alt="">
+        </div>
+        <!-- 结束 -->
+        <div id="over-box">
+            <div id="panel">
+                <img id="panel-img" width="100%" src="../../../../template/images/scoring-correct.png" alt="">
+                <p id="over-time">时间：</p>
+                <p id="over-integral">得分：</p>
+                <a class="refresh" href="javascript:location.reload();">
+                    <img width="100%" src="../../../../template/images/refresh.png" alt="">
+                </a>
+                <div id="mistakes">
+
+                </div>
+            </div>
+        </div>
+        <div id="sound-box">
+        </div>
+        <!-- 计分板 -->
+        <div class="information">
+            <span id="HP">3</span>
+            <span id="grade">0</span>
+            <span id="count-down">90</span>
+        </div>
+        <!-- 拔河 -->
+        <div class="tug-of-war">
+            <!-- <div id="people1"> -->
+            <img id="people1" src="../../../../template/ba-he-bi-sai/images/people1.png" alt="">
+            <!-- </div> -->
+            <!-- <div > -->
+            <img id="people2" src="../../../../template/ba-he-bi-sai/images/people2.png" alt="">
+            <!-- </div> -->
+            <!-- <div > -->
+            <img id="people3" src="../../../../template/ba-he-bi-sai/images/people3.png" alt="">
+            <!-- </div> -->
+            <!-- 绳子 -->
+            <img class="string" src="../../../../template/ba-he-bi-sai/images/string.png" alt="">
+            <!-- 旗子 -->
+            <img id="banner" src="../../../../template/ba-he-bi-sai/images/banner-white.png" alt="">
+            <!-- 球 -->
+            <img id="ball" src="../../../../template/ba-he-bi-sai/images/ball.png" alt="">
+        </div>
+        <div id="option-box">
+        </div>
+    </div>
+
+    <script>
+        // 时间
+        var totalTime = 90
+
+        var data = [{
+            sound: "./sound/sound1.mp3", // 音频
+            options: [ // 选项
+                {
+                    name: '',
+                    imgUrl: "./images/I want to buy the new  film magazine..png", // 图片路径
+                    right: true, // 是否正确
+                }, {
+                    name: '',
+                    imgUrl: "./images/I want to buy the  new magazine..png",
+                    right: false
+                }, {
+                    name: '',
+                    imgUrl: "./images/I want to buy the film magazine.png",
+                    right: false
+                }
+            ]
+        }, {
+            sound: "./sound/sound2.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/I read it last weekend..png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/I read it last Sunday..png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/I read it yesterday.png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound3.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/Was it interesting1.png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/Is it interesting1.png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/It was interesting.png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound4.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/Did you see a film1.png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/Do you see a film1.png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/I want to buy the new  film magazine..png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound5.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/I had a cold..png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/I have a cold..png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/I had a headache.png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound6.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/I stayed at home all  weekend and slept..png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/I stayed at home  all weekend..png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/I stayed at home and slept.png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound7.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/What did John do  yesterday1.png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/What does John do1.png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/What did John do1.png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound8.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/How was your stay1.png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/How is your stay1.png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/How was your visit1.png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound9.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/I didn’t sleep all night..png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/I slept all night..png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/I didn’t sleep well all night.png",
+                right: false
+            }]
+        }, {
+            //
+            sound: "./sound/sound10.mp3",
+            options: [{
+                name: '',
+                imgUrl: "./images/Then I visited my  grandparents..png",
+                right: true,
+            }, {
+                name: '',
+                imgUrl: "./images/I visited my grandparents..png",
+                right: false
+            }, {
+                name: '',
+                imgUrl: "./images/Then I visited my friends.png",
+                right: false
+            }]
+        }]
+    </script>
+    <script src="../../../../template/ba-he-bi-sai/index.js"></script>
+</body>
+
+</html>

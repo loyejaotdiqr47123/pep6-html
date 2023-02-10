@@ -1,0 +1,65 @@
+@import '../css/index.css';
+table,
+tr,
+td {
+    margin: 0;
+    padding: 0;
+    border: 2px solid #631703;
+}
+
+
+/* 单词展示 */
+
+#word-show {
+    width: 16.5vw;
+    height: 4.5vw;
+    font-size: 2.6vw;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 0.2vw #000;
+    line-height: 4.5vw;
+    position: absolute;
+    left: 35vw;
+    top: 50vw;
+    background: url('../ai-ji-gu-bao-mi-gong/images/word-show.png') center no-repeat;
+    background-size: contain;
+}
+
+
+/* 题目显示 */
+
+#title-show {
+    width: 12.5vw;
+    position: absolute;
+    left: 42vw;
+    top: 1vw;
+}
+
+.ok {
+    width: 11.5vw;
+    height: 4.5vw;
+    position: absolute;
+    top: 50vw;
+    left: 52vw;
+    background: url('../ai-ji-gu-bao-mi-gong/images/ok.png') center no-repeat;
+    background-size: contain;
+}
+
+#table {
+    position: absolute;
+    left: 49%;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+}
+
+#table td {
+    width: 3vw;
+    height: 3vw;
+    cursor: pointer;
+}
+
+#table td img {
+    width: 100%;
+    display: block;
+}

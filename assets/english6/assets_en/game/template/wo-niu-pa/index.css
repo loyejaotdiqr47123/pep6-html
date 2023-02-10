@@ -1,0 +1,138 @@
+@import '../css/index.css';
+
+/* 数据版 */
+
+.information {
+    position: absolute;
+    left: 8vw;
+    top: 0.8vw;
+}
+
+
+/*上层底盘*/
+
+#option-box {
+    width: 42vw;
+    height: 10vw;
+    position: absolute;
+    left: 40vw;
+    top: 5vw;
+}
+
+#option-box div {
+    width: 20vw;
+    height: 10vw;
+    color: #fedf50;
+    text-align: center;
+    line-height: 10vw;
+    cursor: pointer;
+    background: url(../wo-niu-pa/images/option.png) center no-repeat;
+    background-size: contain;
+}
+
+#option-box div:nth-child(1) {
+    position: absolute;
+    left: -10vw;
+    top: 2.5vw;
+}
+
+#option-box div:nth-child(2) {
+    position: absolute;
+    left: 10vw;
+    top: -0.5vw;
+}
+
+#option-box div:nth-child(3) {
+    position: absolute;
+    left: 30vw;
+    top: 0.6vw;
+}
+
+#option-box div img {
+    width: 15vw;
+    position: absolute;
+    left: 2.5vw;
+    top: 3.5vw;
+}
+
+
+/* 播放按钮 */
+
+#audio-btn {
+    width: 11.5vw;
+    position: absolute;
+    left: 4.5vw;
+    top: 27vw;
+    cursor: pointer;
+    z-index: 0;
+}
+
+
+/* 蜗牛 */
+
+#snail {
+    width: 10vw;
+    position: absolute;
+    left: 1vw;
+    top: 45vw;
+    /* opacity: 0; */
+}
+
+.snail-climb {
+    animation: snailClimb 3s linear forwards;
+}
+
+@keyframes snailClimb {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    30% {
+        opacity: 1;
+        transform: translate3d(40%, -60%, 0) rotate(-45deg);
+    }
+    80% {
+        opacity: 1;
+        transform: translate3d(110%, -300%, 0) rotate(-60deg);
+        ;
+    }
+    90% {
+        opacity: 1;
+        transform: translate3d(160%, -380%, 0) rotate(-60deg);
+        ;
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(190%, -450%, 0) rotate(0);
+        ;
+    }
+}
+
+.snail-down {
+    animation: snailDown 3s linear forwards;
+}
+
+@keyframes snailDown {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    30% {
+        opacity: 1;
+        transform: translate3d(30%, -65%, 0) rotate(-45deg);
+    }
+    80% {
+        opacity: 1;
+        transform: translate3d(90%, -250%, 0) rotate(-90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(90%, 290%, 0) rotate(-90deg);
+    }
+}
